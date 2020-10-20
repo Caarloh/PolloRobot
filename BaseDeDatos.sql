@@ -9,8 +9,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
--- --------------------------------------------------------
-
 --
 -- Table structure for table `Empleado`
 --
@@ -75,7 +73,8 @@ CREATE TABLE `Proyecto` (
 
 CREATE TABLE `RelacionProyectoMiembro` (
   `refProyecto` int(11) NOT NULL,
-  `refUsuario` varchar(200) NOT NULL
+  `refUsuario` varchar(200) NOT NULL,
+  `rol` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
