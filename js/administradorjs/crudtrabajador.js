@@ -79,12 +79,11 @@ $(document).on("click", ".btnBorrarTrabajador", function(){
 });
     
 $("#formTrabajador").submit(function(e){   
-    e.preventDefault();   
-    id_proveedor = $.trim($("#id_proveedor").val());
+    e.preventDefault();
     nombre = $.trim($("#nombre").val());
-    forma = $.trim($("#forma").val());
-    precio = $.trim($("#precio").val());    
-    stock = $.trim($("#stock").val());    
+    apellidos = $.trim($("#apellidos").val());
+    correo = $.trim($("#correo").val());    
+    paginagit = $.trim($("#paginagit").val());    
     console.log("wena1");
     $.ajax({
         url: "dataBase/crudtrabajador.php",        
