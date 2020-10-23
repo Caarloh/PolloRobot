@@ -178,6 +178,8 @@ a:not([href]):hover {
   color: inherit;
   text-decoration: none;
 }
+.bg-login{}
+
 
 pre,
 code,
@@ -6358,6 +6360,15 @@ a.close.disabled {
 .align-text-top {
   vertical-align: text-top !important;
 }
+
+
+.bg-login{
+
+
+
+}
+
+
 
 .bg-primary {
   background-color: #4e73df !important;

@@ -36,14 +36,9 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-block align-items-center justify-content-center" href="admin.php">
-        <div class="sidebar-brand-icon">
-        <i class="fas fa-robot"></i>
-        </div>
-        <div class="sidebar-brand-text ">Pollo Robot<sup></sup></div>
-        
-      </a>
+        <img class="img" src="https://1.bp.blogspot.com/-i2uV-KM_sJ4/X5Dmw-sOEQI/AAAAAAAACNU/cLtL_TM4K1UotOfNzx83DnP-L58GDSOnACLcBGAsYHQ/s300/LOGOTIPO.png">
         <br>
-
+</a>
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
@@ -150,7 +145,7 @@
   <li class="nav-item dropdown no-arrow">
     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
-      <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+      <img class="img-profile rounded-circle" src="https://southparkphonedestroyer.com/wp-content/uploads/2019/06/website_282x282.jpg">
     </a>
     <!-- Dropdown - User Information -->
     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
