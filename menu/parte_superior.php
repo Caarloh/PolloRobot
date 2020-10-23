@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,17 +13,16 @@
   <title>Pollo Robot</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   
 <!-- Favicon  -->
-<link rel="icon" href="../img/favicon.ico">
-
+<link rel="icon" href="img/favicon.ico">
 <!-- Latest compiled and minified JavaScript -->
   <!-- Custom styles for this template-->
-  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../vendor/datatables/datatables.min.css"/>
-  <link rel="stylesheet" type="text/css" href="../vendor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css"/>
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="vendor/datatables/datatables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="vendor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css"/>
   
 </head>
 
@@ -34,19 +34,21 @@
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
+      
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-block align-items-center justify-content-center" href="admin.php">
         <img class="img" src="https://1.bp.blogspot.com/-i2uV-KM_sJ4/X5Dmw-sOEQI/AAAAAAAACNU/cLtL_TM4K1UotOfNzx83DnP-L58GDSOnACLcBGAsYHQ/s300/LOGOTIPO.png">
         <br>
 </a>
+
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="admin.php">
+        <a class="nav-link" href="index.php">
         <i class="fas fa-home"></i>
-          <span style="font-size: 1.em";>Administrador</span></a>
+          <span style="font-size: 1.1em";>Inicio</span></a>
       </li>
 
       <!-- Divider -->
@@ -54,14 +56,14 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Gestionar
+        Vistas del Proyecto
       </div>
 
       <!-- Nav Item - Plantas Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaAdministrador/gestionarUsuario.php" >
-        <i class="fas fa-users"></i>
-          <span style="font-size: 1.em";>Trabajadores</span>
+        <a class="nav-link collapsed" href="vistaJefe/jefeProyecto.php" >
+        <i class="fas fa-chalkboard-teacher "></i>
+          <span style="font-size: 1.1em";>Jefe Proyecto</span>
         </a>
       </li>
 
@@ -69,13 +71,29 @@
 
       <!-- Nav Item - Plantas Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaAdministrador/gestionarProyecto.php" >
-        <i class="fas fa-file"></i>
-          <span style="font-size: 1.em";>Proyectos</span>
+        <a class="nav-link collapsed" href="vistaUsuario/usuario.php" >
+        <i class="fas fa-user"></i>
+          <span style="font-size: 1.1em";>Usuario</span>
         </a>
       </li>
 
       
+ <!-- Nav Item - Plantas Collapse Menu -->
+ <li class="nav-item">
+        <a class="nav-link collapsed" href="vistaAdministrador/admin.php" >
+        <i class="fab fa-black-tie"></i>
+          <span style="font-size: 1.1em";>Administrador</span>
+        </a>
+      </li>
+
+
+       <!-- Nav Item - Plantas Collapse Menu -->
+ <li class="nav-item">
+        <a class="nav-link collapsed" href="vistaTester/tester.php" >
+        <i class="fas fa-check"></i>
+          <span style="font-size: 1.1em";>Tester</span>
+        </a>
+      </li>
      
 
        
@@ -135,31 +153,11 @@
     </div>
   </li>
 
+ 
 
 
 
-
-  <div class="topbar-divider d-none d-sm-block"></div>
-
-  <!-- Nav Item - User Information -->
-  <li class="nav-item dropdown no-arrow">
-    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
-      <img class="img-profile rounded-circle" src="https://southparkphonedestroyer.com/wp-content/uploads/2019/06/website_282x282.jpg">
-    </a>
-    <!-- Dropdown - User Information -->
-    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-      <a class="dropdown-item" href="#">
-        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-        Perfil
-      </a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-        Salir
-      </a>
-    </div>
-  </li>
+  
 
 </ul>
 
@@ -167,6 +165,7 @@
 
 <!-- Main Content -->
 <div id="content">
+
   <!-- Topbar -->
   
   <!-- End of Topbar -->

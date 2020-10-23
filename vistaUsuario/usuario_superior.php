@@ -34,6 +34,7 @@
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
+     
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-block align-items-center justify-content-center" href="admin.php">
         <img class="img" src="https://1.bp.blogspot.com/-i2uV-KM_sJ4/X5Dmw-sOEQI/AAAAAAAACNU/cLtL_TM4K1UotOfNzx83DnP-L58GDSOnACLcBGAsYHQ/s300/LOGOTIPO.png">
@@ -44,9 +45,9 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="admin.php">
+        <a class="nav-link" href="usuario.php">
         <i class="fas fa-home"></i>
-          <span style="font-size: 1.em";>Administrador</span></a>
+          <span style="font-size: 1.1em";>Usuario</span></a>
       </li>
 
       <!-- Divider -->
@@ -54,14 +55,14 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Gestionar
+        Proyectos
       </div>
 
       <!-- Nav Item - Plantas Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaAdministrador/gestionarUsuario.php" >
-        <i class="fas fa-users"></i>
-          <span style="font-size: 1.em";>Trabajadores</span>
+        <a class="nav-link collapsed" href="../vistaUsuario/proyectosaCargo.php" >
+        <i class="fas fa-user-tie"></i>
+          <span style="font-size: 1.1em";>Lider</span>
         </a>
       </li>
 
@@ -69,9 +70,9 @@
 
       <!-- Nav Item - Plantas Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaAdministrador/gestionarProyecto.php" >
-        <i class="fas fa-file"></i>
-          <span style="font-size: 1.em";>Proyectos</span>
+        <a class="nav-link collapsed" href="../vistaUsuario/proyectosParticipante.php" >
+        <i class="fas fa-users"></i>
+          <span style="font-size: 1.1em";>Integrante</span>
         </a>
       </li>
 
@@ -144,19 +145,27 @@
   <!-- Nav Item - User Information -->
   <li class="nav-item dropdown no-arrow">
     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
-      <img class="img-profile rounded-circle" src="https://southparkphonedestroyer.com/wp-content/uploads/2019/06/website_282x282.jpg">
+      <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
+      <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
     </a>
     <!-- Dropdown - User Information -->
     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
       <a class="dropdown-item" href="#">
         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-        Perfil
+        Profile
+      </a>
+      <a class="dropdown-item" href="#">
+        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+        Settings
+      </a>
+      <a class="dropdown-item" href="#">
+        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+        Activity Log
       </a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-        Salir
+        Logout
       </a>
     </div>
   </li>
