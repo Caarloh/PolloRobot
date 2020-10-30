@@ -91,7 +91,7 @@ $("#formTrabajador").submit(function(e){
     console.log(cargo); 
     console.log("wena1");
     $.ajax({
-        url: "dataBase/crudtrabajador.php",        
+        url: "../dataBase/crudtrabajador.php",        
         type: "POST",
         dataType: "json",
         data: {id_proveedor:id_proveedor, nombre:nombre, forma:forma, precio:precio, stock:stock, id:id, opcion:opcion},

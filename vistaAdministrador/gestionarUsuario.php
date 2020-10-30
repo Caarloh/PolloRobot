@@ -1,4 +1,4 @@
-<?php require_once "../vistaAdministrador/admin_superior.php"?>
+<?php require_once "../componentesVistaAdministrador/admin_superior.php"?>
 
 <!--INICIO del cont principal-->
 <div class="container">

@@ -33,9 +33,8 @@
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-     <!-- Sidebar - Brand -->
-     <a class="sidebar-brand d-block align-items-center justify-content-center" href="tester.php">
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-block align-items-center justify-content-center" href="admin.php">
         <div class="sidebar-brand-icon">
         <i class="fas fa-robot"></i>
         </div>
@@ -45,52 +44,47 @@
         <br>
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="../vistaJefe/jefeProyecto.php">
-        <i class="fas fa-code"></i>
-          <span style="font-size: 1.1em";>Proyectos</span></a>
+        <a class="nav-link" href="usuario.php">
+        <i class="fas fa-home"></i>
+          <span style="font-size: 1.1em";>Usuario</span></a>
       </li>
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="../vistaJefe/tableroProyecto.php">
-        <i class="fab fa-trello"></i>
-          <span style="font-size: 1.1em";>Tablero</span></a>
-      </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-       <!-- Nav Item - Plantas Collapse Menu -->
-       <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaJefe/informes.php" >
-        <i class="fas fa-chart-bar"></i>
-          <span style="font-size: 1.1em";>Informes</span>
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Proyectos
+      </div>
+      <!-- Nav Item - Plantas Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../vistaUsuario/proyectosaCargo.php" >
+        <i class="fas fa-user-tie"></i>
+          <span style="font-size: 1.1em";>Lider</span>
         </a>
       </li>
-
+     
+      <!-- Nav Item - Plantas Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../vistaUsuario/proyectosParticipante.php" >
+        <i class="fas fa-users"></i>
+          <span style="font-size: 1.1em";>Integrante</span>
+        </a>
+      </li>
       
      
-
        
-
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-
     </ul>
     <!-- End of Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
-
      <!-- Topbar -->
      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
 <!-- Sidebar Toggle (Topbar) -->
 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
   <i class="fa fa-bars"></i>
@@ -131,24 +125,36 @@
     </div>
   </li>
 
+
+
+
+
   <div class="topbar-divider d-none d-sm-block"></div>
 
   <!-- Nav Item - User Information -->
   <li class="nav-item dropdown no-arrow">
     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="mr-2 d-none d-lg-inline text-gray-600 small">Jefe Proyecto</span>
+      <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
       <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
     </a>
     <!-- Dropdown - User Information -->
     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
       <a class="dropdown-item" href="#">
         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-        Perfil
+        Profile
+      </a>
+      <a class="dropdown-item" href="#">
+        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+        Settings
+      </a>
+      <a class="dropdown-item" href="#">
+        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+        Activity Log
       </a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-        Salir
+        Logout
       </a>
     </div>
   </li>

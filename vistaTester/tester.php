@@ -1,4 +1,4 @@
-<?php require_once "../vistaTester/tester_superior.php"?>
+<?php require_once "../ComponentesVistaTester/tester_superior.php"?>
 
 <!--INICIO del cont principal-->
 <div class="container">
@@ -12,4 +12,4 @@
 </div>
 <!--FIN del cont principal-->
 
-<?php require_once "../vistaTester/tester_inferior.php"?>
+<?php require_once "../ComponentesVistaTester/tester_inferior.php"?>
