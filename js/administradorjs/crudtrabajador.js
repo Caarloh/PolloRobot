@@ -83,7 +83,12 @@ $("#formTrabajador").submit(function(e){
     nombre = $.trim($("#nombre").val());
     apellidos = $.trim($("#apellidos").val());
     correo = $.trim($("#correo").val());    
-    paginagit = $.trim($("#paginagit").val());    
+    paginagit = $.trim($("#paginagit").val());   
+    cargo = $('input[name=cargo]:checked', '#formTrabajador').val();
+    if(cargo == "Empleado"){
+        cargo = $('input[name=tipo]:checked', '#formTrabajador').val();
+    }
+    console.log(cargo); 
     console.log("wena1");
     $.ajax({
         url: "dataBase/crudtrabajador.php",        

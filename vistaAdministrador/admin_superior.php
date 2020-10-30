@@ -26,7 +26,7 @@
   
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="ocultarTipos()">
 
   <!-- Page Wrapper -->
   <div id="wrapper">

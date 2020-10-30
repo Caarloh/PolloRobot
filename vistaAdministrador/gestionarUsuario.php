@@ -88,13 +88,29 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="cargo" class="col-form-label">Cargo:</label><br>
-                                        <input type="radio" name="cargo" id="jefeProyecto" value="Jefe de Proyecto">
+
+                                        <input type="radio" name="cargo" id="jefeProyecto" value="Jefe de Proyecto" onclick="ocultarTipos()">
                                         <label for="Jefe de Proyecto">Jefe de Proyecto</label><br>
                                        
-                                        <input type="radio" name="cargo" id="empleado" value="Empleado">
+                                        <input type="radio" name="cargo" id="empleado" value="Empleado" onclick="mostrarTipos()">
                                         <label for="Empleado">Empleado</label><br>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="tipos">
+                                    <label for="cargo" class="col-form-label">Tipo de Empleado:</label><br>
+
+                                        <input type="radio" name="tipo" id="analista" value="Analista">
+                                        <label for="Analista">Analista </label><br>
+
+                                        <input type="radio" name="tipo" id="diseniador" value="Diseniador">
+                                        <label for="Diseniador">Diseñador </label><br>
+
+                                        <input type="radio" name="tipo" id="programador" value="Programador">
+                                        <label for="Programador">Programador </label><br>
+
+                                        <input type="radio" name="tipo" id="tester" value="Tester">
+                                        <label for="Tester">Tester </label><br>
+                                </div>
+                                <div class="form-group" id="prueba" >
                                     <label for="paginagit" class="col-form-label">Página de Git:</label>
                                     <input type="text" class="form-control" id="paginagit">
                                 </div>
@@ -116,6 +132,13 @@
 
 
 </div>
-<!--FIN del cont principal-->
-
+<!--FIN del cont principal--> 
+<script>
+    function mostrarTipos(){
+        document.getElementById("tipos").style.display = "block";
+    }
+    function ocultarTipos(){
+        document.getElementById("tipos").style.display = "none";
+    }
+</script>
 <?php require_once "../vistaAdministrador/admin_inferior.php"?>
