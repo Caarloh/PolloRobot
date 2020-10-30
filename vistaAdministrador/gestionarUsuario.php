@@ -141,4 +141,4 @@
         document.getElementById("tipos").style.display = "none";
     }
 </script>
-<?php require_once "../vistaAdministrador/admin_inferior.php"?>
+<?php require_once "../componentesVistaAdministrador/admin_inferior.php"?>

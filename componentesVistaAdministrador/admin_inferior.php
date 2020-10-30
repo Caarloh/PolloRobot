@@ -59,7 +59,7 @@
     <script type="text/javascript" src="../vendor/datatables/datatables.min.js"></script>    
     
     <!-- código propio JS --> 
-    <script type="text/javascript" src="../js/administradorjs/crudtrabajador.js"></script> 
+    <script type="text/javascript" src="../js/administrador/crudtrabajador.js"></script> 
     
 
 </body>
