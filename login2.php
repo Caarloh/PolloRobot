@@ -24,99 +24,84 @@
 
 <body class="bg-gradient-primary">
 
-  <div class="container">
+  	<div class="container">
 
     <!-- Outer Row -->
-    <div class="row justify-content-center">
+    	<div class="row justify-content-center">
 
-      <div class="col-xl-10 col-lg-12 col-md-9">
+      		<div class="col-xl-10 col-lg-12 col-md-9">
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-	              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-	              <div class="col-lg-6">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
-                  </div>
+        		<div class="card o-hidden border-0 shadow-lg my-5">
+          			<div class="card-body p-0">
+            		<!-- Nested Row within Card Body -->
+            			<div class="row">
+	              			<div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              				<div class="col-lg-6">
+            					<div class="p-5">
+              						<div class="text-center">
+                						<h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
+              						</div>
+           							<form class="user" method="post">
+			     						<table width="330" height="135" border="0" class="text">
+			          						<div class="form-group">
+			             						<td><input type="text" name="email" id="correo" placeholder="Ingresa el correo..."></td> 
+			         						</div>
+									        <tr>
+									            <td><input type="password" name="password" id="pass" placeholder="Contraseña"></td> 
+									        </tr>
+									        <tr>
+									            <td align="center">
+									                <button type="submit" id="boton" name="entrar" >Entrar</button>
+									            </td>
+									        </tr>
+									    </table>
+									</form>	
 
+		                   		 	<?php
+		                   		 		#Conexion
+		                   		 		include_once "dataBase/conexion.php";
+									    $objeto = new Conexion();
+									    $conexion = $objeto->Conectar();
 
-               		 <form class="user" method="post">
-				     <table width="330" height="135" border="0" class="text">
-				          <div class="form-group">
-				             <td><input type="text" name="email" id="correo" placeholder="Ingresa el correo..."></td> 
-				         </div>
-				         <tr>
-				             <td><input type="password" name="password" id="pass" placeholder="Contraseña"></td> 
-				         </tr>
-				         <tr>
-				             <td align="center">
-				                <button type="submit" id="boton" name="entrar" >Entrar</button>
-				             </td>
-				         </tr>
-				     </table>
-				  </form>	
-
-                   		 	<?php
-                   		 		function accion(){
-								    echo "Contrasena correcta";
-								  }
-								$email="";
-							    $password="";
-							    if(isset($_POST['entrar'])){
-							        $email=$_POST['email'];
-							        $password=$_POST['password'];
-							    }
-                    			
-	                    		
-	                    		#Verificamos que la cuenta esté creada.
-								$sqlConsulta  ="SELECT * FROM Empleado";
-								
-								//$resultado=pg_query($conectar,$sqlConsulta);
-
-								if("a"==$email){
-									if("b"==$password){
-										header("location: index.php");
-									}
-								}
-								else{
-									#echo "<script type='text/javascript'>alert('Email invalido');</script>";
-								}
-
-								#while ($fila = pg_fetch_row($resultado)) {
-									#if($fila[3]==intval($_POST['email'])){
-										#if($fila[2]==intval($_POST['password'])){
-										#	alert("Contrasena correcta");
-										#}else{
-											#echo "contrasena incorrecta";
-										#	alert("Contrasena incorrecta");
-									#	}
-									#}
-								#}
-								###################################################
-	                    	?>
-                    
-					
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Olvido su contraseña?</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="register.php">Crear Cuenta!</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+										$email="";
+									    $password="";
+									    if(isset($_POST['entrar'])){
+									        $email=$_POST['email'];
+									        $password=$_POST['password'];
+									    }
+		                    			#echo $email;
+		                    			#echo $password;
+			                    		#Consulta
+										$sqlConsulta  ="SELECT * FROM Empleado";
+										$resultado = $conexion->prepare($sqlConsulta);
+									    $resultado->execute();
+									    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+									    $i=0;
+										while($i<sizeof($data)){
+											if($data[$i]['correo']==$email){
+												if($data[$i]['contrasena']==$password){
+													header ('Location: vistaUsuario/usuario.php');
+													##header("location: index.php");
+												}
+											}
+											$i++;
+										}
+			                    	?>
+              						<hr>
+	                  				<div class="text-center">
+	                    				<a class="small" href="forgot-password.html">Olvido su contraseña?</a>
+              						</div>
+              						<div class="text-center">
+                						<a class="small" href="register.php">Crear Cuenta!</a>
+              						</div>
+            					</div>
+          					</div>
+            			</div>
+          			</div>
+        		</div>
+      		</div>
+    	</div>
+  	</div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
