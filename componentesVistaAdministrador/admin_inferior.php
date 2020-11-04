@@ -60,6 +60,9 @@
     
     <!-- código propio JS --> 
     <script type="text/javascript" src="../js/administrador/crudtrabajador.js"></script> 
+
+    <script type="text/javascript" src="../js/administrador/crudproyecto.js"></script> 
+
     
 
 </body>
