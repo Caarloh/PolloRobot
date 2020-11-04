@@ -73,46 +73,50 @@
                                 <img src="../img/polloRegistro.jpg" class="rounded img-fluid " >
                             </div>
                             <!-- Inputs-->
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="nombre" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombre">
+                            <div class="col-sm-12 row justify-content-center align-items-center minh-100">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="nombre" class="col-form-label">Nombre:</label>
+                                        <input type="text" class="form-control" id="nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apellidos" class="col-form-label">Apellidos:</label>
+                                        <input type="text" class="form-control" id="apellidos">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="correo" class="col-form-label">Correo:</label>
+                                        <input type="text" class="form-control" id="correo">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="apellidos" class="col-form-label">Apellidos:</label>
-                                    <input type="text" class="form-control" id="apellidos">
-                                </div>
-                                <div class="form-group">
-                                    <label for="correo" class="col-form-label">Correo:</label>
-                                    <input type="text" class="form-control" id="correo">
-                                </div>
-                                <div class="form-group">
-                                    <label for="cargo" class="col-form-label">Cargo:</label><br>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="cargo" class="col-form-label">Cargo:</label><br>
 
-                                        <input type="radio" name="cargo" id="jefeProyecto" value="Jefe de Proyecto" onclick="ocultarTipos()">
-                                        <label for="Jefe de Proyecto">Jefe de Proyecto</label><br>
-                                       
-                                        <input type="radio" name="cargo" id="empleado" value="Empleado" onclick="mostrarTipos()">
-                                        <label for="Empleado">Empleado</label><br>
-                                </div>
-                                <div class="form-group" id="tipos">
-                                    <label for="cargo" class="col-form-label">Tipo de Empleado:</label><br>
+                                            <input type="radio" name="cargo" id="jefeProyecto" value="Jefe de Proyecto" onclick="ocultarTipos()">
+                                            <label for="Jefe de Proyecto">Jefe de Proyecto</label><br>
+                                        
+                                            <input type="radio" name="cargo" id="empleado" value="Empleado" onclick="mostrarTipos()">
+                                            <label for="Empleado">Empleado</label><br>
+                                    </div>
+                                    <div class="form-group" id="tipos">
+                                        <label for="cargo" class="col-form-label">Tipo de Empleado:</label><br>
 
-                                        <input type="radio" name="tipo" id="analista" value="Analista">
-                                        <label for="Analista">Analista </label><br>
+                                            <input type="radio" name="tipo" id="analista" value="Analista">
+                                            <label for="Analista">Analista </label><br>
 
-                                        <input type="radio" name="tipo" id="diseniador" value="Diseniador">
-                                        <label for="Diseniador">Diseñador </label><br>
+                                            <input type="radio" name="tipo" id="diseniador" value="Diseniador">
+                                            <label for="Diseniador">Diseñador </label><br>
 
-                                        <input type="radio" name="tipo" id="programador" value="Programador">
-                                        <label for="Programador">Programador </label><br>
+                                            <input type="radio" name="tipo" id="programador" value="Programador">
+                                            <label for="Programador">Programador </label><br>
 
-                                        <input type="radio" name="tipo" id="tester" value="Tester">
-                                        <label for="Tester">Tester </label><br>
-                                </div>
-                                <div class="form-group" id="prueba" >
-                                    <label for="paginagit" class="col-form-label">Página de Git:</label>
-                                    <input type="text" class="form-control" id="paginagit">
+                                            <input type="radio" name="tipo" id="tester" value="Tester">
+                                            <label for="Tester">Tester </label><br>
+                                    </div>
+                                    <div class="form-group" id="prueba" >
+                                        <label for="paginagit" class="col-form-label">Página de Git:</label>
+                                        <input type="text" class="form-control" id="paginagit">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +125,7 @@
                     <div class="modal-footer">
                         <!--Guardar y cancelar-->
                         <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>
+                        <button type="submit" id="btnGuardar" class="btn btn-success">Guardar</button>
                     </div>
                 </form>
             </div>
@@ -140,5 +144,7 @@
     function ocultarTipos(){
         document.getElementById("tipos").style.display = "none";
     }
+
+    
 </script>
 <?php require_once "../componentesVistaAdministrador/admin_inferior.php"?>
