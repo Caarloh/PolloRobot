@@ -38,40 +38,31 @@
       <a class="sidebar-brand d-block align-items-center justify-content-center" href="admin.php">
         <img class="img" src="https://1.bp.blogspot.com/-i2uV-KM_sJ4/X5Dmw-sOEQI/AAAAAAAACNU/cLtL_TM4K1UotOfNzx83DnP-L58GDSOnACLcBGAsYHQ/s300/LOGOTIPO.png">
         <br>
-</a>
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="admin.php">
-        <i class="fas fa-home"></i>
-          <span style="font-size: 1.em";>Administrador</span></a>
+        <a class="nav-link" href="../vistaJefe/jefeProyecto.php">
+        <i class="fas fa-code"></i>
+          <span style="font-size: 1.1em";>Proyectos</span></a>
+      </li>
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="../vistaJefe/tableroProyecto.php">
+        <i class="fab fa-trello"></i>
+          <span style="font-size: 1.1em";>Tareas</span></a>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Gestionar
-      </div>
-
-      <!-- Nav Item - Plantas Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaAdministrador/gestionarUsuario.php" >
-        <i class="fas fa-users"></i>
-          <span style="font-size: 1.em";>Trabajadores</span>
-        </a>
-      </li>
-
-     
-
-      <!-- Nav Item - Plantas Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaAdministrador/gestionarProyecto.php" >
-        <i class="fas fa-file"></i>
-          <span style="font-size: 1.em";>Proyectos</span>
+       <!-- Nav Item - Plantas Collapse Menu -->
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="../vistaJefe/informes.php" >
+        <i class="fas fa-chart-bar"></i>
+          <span style="font-size: 1.1em";>Informes</span>
         </a>
       </li>
 
@@ -135,17 +126,13 @@
     </div>
   </li>
 
-
-
-
-
   <div class="topbar-divider d-none d-sm-block"></div>
 
   <!-- Nav Item - User Information -->
   <li class="nav-item dropdown no-arrow">
     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
-      <img class="img-profile rounded-circle" src="https://southparkphonedestroyer.com/wp-content/uploads/2019/06/website_282x282.jpg">
+      <span class="mr-2 d-none d-lg-inline text-gray-600 small">Jefe Proyecto</span>
+      <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
     </a>
     <!-- Dropdown - User Information -->
     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

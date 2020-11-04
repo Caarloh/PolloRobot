@@ -1,4 +1,4 @@
-<?php require_once "menu/parte_superior.php"?>
+<?php require_once "componentesMenu/parte_superior.php"?>
 
 <!--INICIO del cont principal-->
 <div class="container">
@@ -12,4 +12,4 @@
 </div>
 <!--FIN del cont principal-->
 
-<?php require_once "menu/parte_inferior.php"?>
+<?php require_once "componentesMenu/parte_inferior.php"?>
