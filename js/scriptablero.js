@@ -1,6 +1,11 @@
 //variables
 let tareaArrastrable;
+let numeroTarea = 1;
 let dropzones = document.querySelectorAll('.dropzone');
+let nombre;
+let descripcion;
+let prioridad;
+let fecha;
 
 // Tituos de las Tableros y colores
 let dataColors = [
@@ -27,35 +32,49 @@ $(document).ready(()=>{
         initializeComponents(dataCards);
     }
     //creacion de tareas en el tableros
-    initializeCards();
-    $('#add').click(()=>{
-        const nombre = $('#nombreInput').val()!==''?$('#nombreInput').val():null;
-        const descripcion = $('#descripcionInput').val()!==''?$('#descripcionInput').val():null;
-        const prioridad = $('#prioridadInput').val()!==''?$('#prioridadInput').val():null;
-        const fecha = $('#fechaInput').val()!==''?$('#fechaInput').val():null;
-        $('#nombreInput').val('');
-        $('#descripcionInput').val('');
-        $('#fechaInput').val('');
-        $('#prioridadInput').val('');
-        if(nombre && descripcion && fecha && prioridad){
-            let id = dataCards.config.maxid+1;
-            const newCard = {
-                id,
-                nombre,
-                descripcion,
-                prioridad,
-                fecha,
-                position:"gray"
-            }
-            dataCards.cards.push(newCard);
-            dataCards.config.maxid = id;
-            save();
-            appendComponents(newCard);
-            initializeCards();
-        }
+    initializeCards();    
+    
+    
+});
+
+
+$('#add').click(()=>{
+    nombre = $('#nombre').val()!==''?$('#nombre').val():null;
+    descripcion = $('#descripcion').val()!==''?$('#descripcion').val():null;
+    prioridad = $('#prioridad').val()!==''?$('#prioridad').val():null;
+    fecha = $('#fecha').val()!==''?$('#fecha').val():null;
+    let datos= "Nom="+nombre+"&Desc="+descripcion+"&Prio="+prioridad+"&Fech="+fecha
+    $.ajax({
+        url: "../dataBase/agregarTarea.php",        
+        type: "POST",
+        data: datos,
+        success: function(data){             
+            console.log(data);          
+        }, error: function(data) {
+        console.log("No se ha podido obtener la información");
+        } 
     });
-    
-    
+
+    $('#nombre').val('');
+    $('#descripcion').val('');
+    $('#fecha').val('');
+    $('#prioridad').val('');
+    if(nombre && descripcion && fecha && prioridad){
+        let id = dataCards.config.maxid+1;           
+        const newCard = {
+            id,
+            nombre,
+            descripcion,
+            prioridad,
+            fecha,
+            position:"gray"
+        }
+        dataCards.cards.push(newCard);
+        dataCards.config.maxid = id;
+        save();
+        appendComponents(newCard);
+        initializeCards();
+    }
 });
 
 //funciones
@@ -103,10 +122,19 @@ function appendComponents(card){
             <div class="content">               
                 <h6 class="nombre" style="color:black" ;>${card.nombre}</h6>
                 <p class="descripcion">${card.descripcion}</p>
-                <p class="descripcion">${card.prioridad}</p>
-                <p class="fecha">${card.fecha}</p>
+                <div class="row justify-content-start">
+                    <div class="col-4">
+                    <p class="descripcion">${card.prioridad}</p>
+                    </div>
+                    <div class="col">
+                    <p class="fecha">${card.fecha}</p>
+                    </div>                    
+                </div>
+                                
+                
             </div>
-            <form class="row mx-auto justify-content-between">                
+            <form class="row mx-auto justify-content-between"> 
+            <span>          </span>               
                 <button class="invisibleBtn">
                     <i class="fas fa-trash-alt fa-4x" onclick="deleteCard(${card.id.toString()})" style="color:red" ;></i>
                 </button>
@@ -122,6 +150,19 @@ function appendComponents(card){
 function deleteCard(id){
     dataCards.cards.forEach(card=>{
         if(card.id === id){
+            console.log("aqui wn")
+            console.log(card.nombre)
+            let datos= "Nom="+card.nombre
+            $.ajax({
+                url: "../dataBase/quitarTarea.php",        
+                type: "POST",
+                data: datos,
+                success: function(data){             
+                    console.log(data);          
+                }, error: function(data) {
+                console.log("No se ha podido obtener la información");
+                } 
+            });
             let index = dataCards.cards.indexOf(card);
             console.log(index)
             dataCards.cards.splice(index, 1);
@@ -222,83 +263,21 @@ $("#btnRepo").click(function(){
     opcion = 1; //alta
 });
 
- 
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
 
-$(function () {
-    $('.list-group.checked-list-box .list-group-item').each(function () {
-        
-        // Settings
-        var $widget = $(this),
-            $checkbox = $('<input type="checkbox" class="hidden" />'),
-            color = ($widget.data('color') ? $widget.data('color') : "primary"),
-            style = ($widget.data('style') == "button" ? "btn-" : "list-group-item-"),
-            settings = {
-                on: {
-                    icon: 'glyphicon glyphicon-check'
-                },
-                off: {
-                    icon: 'glyphicon glyphicon-unchecked'
-                }
-            };
-            
-        $widget.css('cursor', 'pointer')
-        $widget.append($checkbox);
-
-        // Event Handlers
-        $widget.on('click', function () {
-            $checkbox.prop('checked', !$checkbox.is(':checked'));
-            $checkbox.triggerHandler('change');
-            updateDisplay();
-        });
-        $checkbox.on('change', function () {
-            updateDisplay();
-        });
-          
-
-        // Actions
-        function updateDisplay() {
-            var isChecked = $checkbox.is(':checked');
-
-            // Set the button's state
-            $widget.data('state', (isChecked) ? "on" : "off");
-
-            // Set the button's icon
-            $widget.find('.state-icon')
-                .removeClass()
-                .addClass('state-icon ' + settings[$widget.data('state')].icon);
-
-            // Update the button's color
-            if (isChecked) {
-                $widget.addClass(style + color + ' active');
-            } else {
-                $widget.removeClass(style + color + ' active');
-            }
-        }
-
-        // Initialization
-        function init() {
-            
-            if ($widget.data('checked') == true) {
-                $checkbox.prop('checked', !$checkbox.is(':checked'));
-            }
-            
-            updateDisplay();
-
-            // Inject the icon if applicable
-            if ($widget.find('.state-icon').length == 0) {
-                $widget.prepend('<span class="state-icon ' + settings[$widget.data('state')].icon + '"></span>');
-            }
-        }
-        init();
-    });
-    
-    $('#get-checked-data').on('click', function(event) {
-        event.preventDefault(); 
-        var checkedItems = {}, counter = 0;
-        $("#check-list-box li.active").each(function(idx, li) {
-            checkedItems[counter] = $(li).text();
-            counter++;
-        });
-        $('#display-json').html(JSON.stringify(checkedItems, null, '\t'));
-    });
-});
