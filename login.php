@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,68 +18,106 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Favicon  -->
- <link rel="icon" href="img/favicon.ico">sss
+ <link rel="icon" href="img/favicon.ico">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
-<body class="bg-login">
+<div id="wrapper">   
+<!-- Topbar -->
+	<nav class="lg-bar">
 
-  <div class="container">
+		<img class="im-login" id=im-login src="https://1.bp.blogspot.com/-i2uV-KM_sJ4/X5Dmw-sOEQI/AAAAAAAACNU/cLtL_TM4K1UotOfNzx83DnP-L58GDSOnACLcBGAsYHQ/s300/LOGOTIPO.png">
+
+	</nav>
+</div>
+
+
+
+
+
+<body class="log-bg">
+
+  	<div class="container">
 
     <!-- Outer Row -->
-    <div class="row justify-content-center">
+    	<div class="row justify-content-center">
 
-      <div class="col-xl-10 col-lg-12 col-md-9">
+      		<div class="col-xl-10 col-lg-12 col-md-9">
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
-                  </div>
-                  <form class="user">
-                    <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingresa el correo...">
-                    </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
-                    </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Recordarme</label>
-                      </div>
-                    </div>
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
-                      Entrar
-                    </a>
-                    <hr>                    
-                  </form>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Olvido su contraseña?</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="register.php">Crear Cuenta!</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        		<div class="card o-hidden border-0 shadow-lg my-5">
+          			<div class="card-body p-0">
+            		<!-- Nested Row within Card Body -->
+            			<div class="row">
+              				<div class="col-lg-6">
+            					<div class="p-5">
+              						<div class="text-center">
+                						<h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
+              						</div>
+           							<form class="user" method="post">
+			     						<table width="330" height="135" border="0" class="text">
+			          						<div class="form-group">
+			             						<td><input class="form-control" type="text" name="email" id="correo" placeholder="Ingresa el correo..."></td> 
+			         						</div>
+									        <tr>
+									            <td><input class="form-control" type="password" name="password" id="pass" placeholder="Contraseña"></td> 
+									        </tr>
+									        <tr>
+									            <td align="center">
+									                <button class="btn" type="submit" id="boton" name="entrar" >Entrar</button>
+									            </td>
+									        </tr>
+									    </table>
+									</form>	
 
-      </div>
+		                   		 	<?php
+		                   		 		#Conexion
+		                   		 		include_once "dataBase/conexion.php";
+									    $objeto = new Conexion();
+									    $conexion = $objeto->Conectar();
 
-    </div>
+										$email="";
+									    $password="";
+									    if(isset($_POST['entrar'])){
+									        $email=$_POST['email'];
+									        $password=$_POST['password'];
+									    }
+		                    			#echo $email;
+		                    			#echo $password;
+			                    		#Consulta
+										$sqlConsulta  ="SELECT * FROM Empleado";
+										$resultado = $conexion->prepare($sqlConsulta);
+									    $resultado->execute();
+									    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+									    $i=0;
+										while($i<sizeof($data)){
+											if($data[$i]['correo']==$email){
+												if($data[$i]['contrasena']==$password){
+													header ('Location: vistaUsuario/usuario.php');
+													##header("location: index.php");
+												}
+											}
+											$i++;
+										}
+			                    	?>
+              						<hr>
+	                  				<div class="text-center">
+	                    				<a class="small" href="forgot-password.html">Olvido su contraseña?</a>
+              						</div>
+            					</div>
+          					</div>
+            			</div>
+          			</div>
+        		</div>
+      		</div>
+    	</div>
+  	</div>
 
-  </div>
 
+
+
+	  
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -87,6 +127,9 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+
+
 
 </body>
 
