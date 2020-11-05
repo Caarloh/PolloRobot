@@ -24,6 +24,12 @@
 
 </head>
 
+
+
+
+
+
+<body class="log-bg">
 <div id="wrapper">   
 <!-- Topbar -->
 	<nav class="lg-bar">
@@ -32,13 +38,6 @@
 
 	</nav>
 </div>
-
-
-
-
-
-<body class="log-bg">
-
   	<div class="container">
 
     <!-- Outer Row -->
