@@ -42,6 +42,25 @@
 
 }
  
+.blueButton{
+   background-color:#314e8e; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin:0px; 
+  width: 400px;
+  height: 50px;
+
+
+}
+.blueButton h1{
+   color:white;
+
+
+}
  
  
  

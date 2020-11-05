@@ -55,7 +55,7 @@
                 						<h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
               						</div>
            							<form class="user" method="post">
-			     						<table width="330" height="135" border="0" class="text">
+			     						<table width="330" height="250" border="0" class="text">
 			          						<div class="form-group">
 			             						<td><input class="form-control" type="text" name="email" id="correo" placeholder="Ingresa el correo..."></td> 
 			         						</div>
@@ -64,7 +64,7 @@
 									        </tr>
 									        <tr>
 									            <td align="center">
-									                <button class="btn" type="submit" id="boton" name="entrar" >Entrar</button>
+									                <button class="blueButton" type="submit" id="boton" name="entrar" >Entrar</button>
 									            </td>
 									        </tr>
 									    </table>
