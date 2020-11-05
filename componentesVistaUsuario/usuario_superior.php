@@ -1,3 +1,9 @@
+<?php
+  require_once "../dataBase/conexion.php";
+  $usuario = "EDU661";
+  $conexionBase = new Conexion();
+  $obtenerConexion = $conexionBase->Conectar();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,30 +52,9 @@
       <hr class="sidebar-divider my-0">
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="usuario.php">
+        <a class="nav-link" href="usuario2.php">
         <i class="fas fa-home"></i>
-          <span style="font-size: 1.1em";>Usuario</span></a>
-      </li>
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Proyectos
-      </div>
-      <!-- Nav Item - Plantas Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaUsuario/proyectosaCargo.php" >
-        <i class="fas fa-user-tie"></i>
-          <span style="font-size: 1.1em";>Lider</span>
-        </a>
-      </li>
-     
-      <!-- Nav Item - Plantas Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaUsuario/proyectosParticipante.php" >
-        <i class="fas fa-users"></i>
-          <span style="font-size: 1.1em";>Integrante</span>
-        </a>
+          <span style="font-size: 1.1em">Usuario</span></a>
       </li>
       
      
@@ -90,44 +75,8 @@
   <i class="fa fa-bars"></i>
 </button>
 
-<!-- Topbar Search -->
-<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-  <div class="input-group">
-    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-primary" type="button">
-        <i class="fas fa-search fa-sm"></i>
-      </button>
-    </div>
-  </div>
-</form>
-
 <!-- Topbar Navbar -->
 <ul class="navbar-nav ml-auto">
-
-  <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-  <li class="nav-item dropdown no-arrow d-sm-none">
-    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <i class="fas fa-search fa-fw"></i>
-    </a>
-    <!-- Dropdown - Messages -->
-    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-      <form class="form-inline mr-auto w-100 navbar-search">
-        <div class="input-group">
-          <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="button">
-              <i class="fas fa-search fa-sm"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </li>
-
-
-
-
 
   <div class="topbar-divider d-none d-sm-block"></div>
 
