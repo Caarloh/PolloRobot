@@ -1,6 +1,5 @@
-<?php require_once "../componentesVistaAdministrador/admin_superior.php"?>
-
-<!--INICIO del cont principal-->
+<?php require_once "../componentesVistaAdministrador/admin_superior.php"
+?>
 <div class="container">
     <h1>Gestion de Proyecto</h1>
 <div class="container">
@@ -10,8 +9,7 @@
                 </div>
             </div>
     </div>
-    
-    <!--Modal para CRUD-->
+
     <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -37,6 +35,19 @@
                                     <div class="form-group">
                                         <label for="nombre" class="col-form-label">Nombre:</label>
                                         <input type="text" class="form-control" id="nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descripcion" class="col-form-label">Descripcion:</label>
+                                        <input type="text" class="form-control" id="descripcion">
+                                    </div>
+                                    <div class="form-group" method="post" action="#">
+                                        <label for="jefe" class="col-form-label">Jefe de Proyecto:</label>
+                                        <input class="form-control" type="text" name="jefe" id="jefe" placeholder="Buscar...">
+                                    </div>
+                                    <div class="form-group" id="suggestions"></div>
+                                    <div class="form-group">
+                                        <label for="repGit" class="col-form-label">Repositorio Git:</label>
+                                        <input type="text" class="form-control" id="repGit">
                                     </div>
                                 </div>
                             </div>
