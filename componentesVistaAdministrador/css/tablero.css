@@ -1,0 +1,195 @@
+html{
+    font-family: "Nunito";
+    --scrollbarBG: #1B1C28;
+    --thumbBG: #ffff;
+
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    background-color: #FFFF;  
+    height: 100%;
+    width: 100%;  
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar{
+    width: 11px;
+    height: 4px;
+}
+body::-webkit-scrollbar:horizontal{
+    height: 4px;
+}
+  
+body::-webkit-scrollbar-track, body::-webkit-scrollbar-track:horizontal {
+    background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}
+.boards {
+    display: inline-flex;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    border-top: 1px;
+}
+
+.board {
+    background: #F5F5F5;
+    margin: 0 .5rem;
+    padding: 0px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.board h3 {
+    padding: 16px!important;
+    min-width: 250px;
+    width: 100%;
+    margin: 0;
+    background-color: #FFFF;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1C1C2E;
+}
+
+.dropzone {
+    padding: 16px;
+    min-width: 10px;
+    min-height: 300px;
+    justify-content: center;
+    height: 100%;
+}
+
+.kanbanCard {
+    background-color: #FFFF;
+    padding: 12px;
+    width: 200px;
+    margin: auto;
+    margin-bottom: 1rem;
+    border-radius: 1px;
+    font-weight: 200;
+    font-size: 5px;
+}
+
+.descripcion{
+    color: #030000;
+    font-weight: normal;
+    font-size: 12px;
+}
+.fecha{
+    color: #030000;
+    font-weight: normal;
+    font-size: 12px;
+}
+.prioridad{
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.purple{
+    border-top: 5px solid #4515CF;
+}
+.blue {
+    border-top: 5px solid #158CCF;
+}
+.gray{
+    border-top: 5px solid #a39e95;
+}
+.green{
+    border-top: 5px solid #5AD111;
+}
+
+.highlight{
+    background-color: #D7D7D7cc;
+}
+.kanbanCard, .dropzone{
+    transition: 400ms;
+}
+.is-dragging, .darkmode .is-dragging{
+    cursor: move!important;
+    cursor: -webkit-grabbing;
+    opacity: .3;
+}
+.over{
+    background: #E9E9E9;
+}
+
+.form-inline{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+label{
+    margin:0!important
+}
+input{
+    margin: 0rem 1rem 0rem .5rem!important;
+}
+
+.invisibleBtn:focus, #theme-btn:focus{
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: none!important;
+}
+.invisibleBtn{
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* loading */
+.loader {
+    border: 16px solid white; /* Light grey */
+    border-top: 16px solid #1d1f20; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    background-color: transparent;
+     /* Light grey */
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+}
+#loadingScreen{
+    position: absolute;
+    z-index: 30;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.state-icon {
+    left: -5px;
+}
+.list-group-item-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(66, 139, 202);
+}
+
+/* DEMO ONLY - REMOVES UNWANTED MARGIN */
+.well .list-group {
+    margin-bottom: 0px;
+}
