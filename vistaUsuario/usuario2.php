@@ -2,8 +2,8 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Vista Usuario</h1>
-    <h1>Proyectos a Cargo</h1>
+    <h1 style="color:black">Vista Usuario</h1>
+    <h1 style="color:black">Proyectos a Cargo</h1>
     <div class="container">
         <div class="row row-cols-3">
             <?php
@@ -27,8 +27,8 @@
             
         </div>
     </div>
-
-    <h1>Proyectos Participante</h1>
+    
+    <h1 style="color:black">Proyectos Participante</h1>
     <div class="container">
         <div class="row row-cols-3">
             <?php
