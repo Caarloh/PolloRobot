@@ -1,5 +1,6 @@
-
-
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,6 +94,8 @@
 										while($i<sizeof($data)){
 											if($data[$i]['correo']==$email){
 												if($data[$i]['contrasena']==$password){
+													$_SESSION["usuario"] = $data[$i]['usuario'];//guardamos la variable
+													$usuario = $_SESSION["usuario"];
 													header ('Location: vistaUsuario/usuario.php');
 													##header("location: index.php");
 												}

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $usuario = $_SESSION["usuario"];
+?>
 <?php require_once "../componentesVistaUsuario/usuario_superior.php"?>
 
 <!--INICIO del cont principal-->
