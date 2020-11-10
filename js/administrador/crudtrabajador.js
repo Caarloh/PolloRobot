@@ -83,33 +83,72 @@ $("#formTrabajador").submit(function(e){
     nombre = $.trim($("#nombre").val());
     apellidos = $.trim($("#apellidos").val());
     correo = $.trim($("#correo").val());    
-    paginagit = $.trim($("#paginagit").val());   
+    perfilGit = $.trim($("#paginagit").val());   
     cargo = $('input[name=cargo]:checked', '#formTrabajador').val();
-    if(cargo == "Empleado"){
-        cargo = $('input[name=tipo]:checked', '#formTrabajador').val();
+    
+    var showModal = true;
+    if(nombre == ""){
+        $("#nombre").addClass("border-danger");
+        showModal =false;
     }
-    console.log(cargo); 
-    console.log("wena1");
-    $.ajax({
-        url: "../dataBase/crudtrabajador.php",        
-        type: "POST",
-        dataType: "json",
-        data: {id_proveedor:id_proveedor, nombre:nombre, forma:forma, precio:precio, stock:stock, id:id, opcion:opcion},
-        success: function(data){             
-            console.log(data);
-            id = data[0].id;
-            id_proveedor = data[0].id_proveedor;            
-            nombre = data[0].nombre;
-            forma = data[0].forma;
-            precio = data[0].precio;            
-            stock = data[0].stock;
-            if(opcion == 1){tablaPlantas.row.add([id,id_proveedor,nombre,forma, precio, stock]).draw();}
-            else{tablaPlantas.row(fila).data([id,id_proveedor,nombre,forma, precio, stock]).draw();}            
-        }, error: function(data) {
-        console.log("No se ha podido obtener la información");
-        }     
-    });
-    $("#modalCRUD").modal("hide");    
+    if(apellidos == ""){
+        $("#apellidos").addClass("border-danger");
+        showModal =false;
+    }
+    if(correo == ""){
+        $("#correo").addClass("border-danger");
+        showModal =false;
+    }
+    if(perfilGit == ""){
+        $("#paginagit").addClass("border-danger");
+        showModal =false;
+    }
+    if(cargo == ""){
+        showModal =false;
+    }
+    if(showModal){
+        $("#nombre").removeClass("border-danger");
+        $("#apellidos").removeClass("border-danger");
+        $("#correo").removeClass("border-danger");
+        $("#paginagit").removeClass("border-danger");
+    }    
+    if(cargo == "Empleado"){
+        tipoEmpleado = $('input[name=tipo]:checked', '#formTrabajador').val();
+    }else{
+        tipoEmpleado = cargo;
+    }
+    
+    usuario = nombre+"_"+apellidos;
+    contrasena = nombre.charAt(0)+nombre.charAt(1)+apellidos.charAt(0)+apellidos.charAt(1);
+    console.log(usuario);
+    console.log(contrasena);
+    
+    if(showModal){
+        $.ajax({
+            url: "../dataBase/insertar.php",        
+            type: "POST",
+            data: {usuario:usuario, nombre:nombre, apellidos:apellidos, correo:correo, cargo:cargo, contrasena:contrasena, perfilGit:perfilGit, tipoEmpleado:tipoEmpleado},
+            success: function(data){             
+                console.log(data);
+                
+                
+                usuario = data[0].usuario;
+                nombre = data[0].nombre;            
+                apellidos = data[0].apellidos;
+                correo = data[0].correo;
+                cargo = data[0].cargo;            
+                contrasena = data[0].contrasena;
+                paginagit = data[0].perfilGit;
+                tipoEmpleado = data[0].tipoEmpleado; 
+                        
+            }, error: function(data) {
+            console.log("No se ha podido obtener la información");
+            }     
+        });
+        $("#modalCRUD").modal("hide");   
+    }
+     
+    
     
 });    
     

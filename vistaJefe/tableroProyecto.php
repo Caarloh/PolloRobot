@@ -2,8 +2,7 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Tablero Proyectos</h1>
-
+    
     
 
    

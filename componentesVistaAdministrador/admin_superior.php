@@ -23,7 +23,26 @@
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../vendor/datatables/datatables.min.css"/>
   <link rel="stylesheet" type="text/css" href="../vendor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css"/>
-  
+  <style>
+    #suggestions {
+      box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+      height: auto;
+      position: absolute;
+      top: 45px;
+      z-index: 9999;
+      width: 206px;
+  }
+ 
+  #suggestions .suggest-element {
+      background-color: #EEEEEE;
+      border-top: 1px solid #d6d4d4;
+      cursor: pointer;
+      padding: 8px;
+      top: 45px;
+      z-index: 9999;
+      width: 100%;
+      float: left;
+  }</style>
 </head>
 
 <body id="page-top" onload="ocultarTipos()">

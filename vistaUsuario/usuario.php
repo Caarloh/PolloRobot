@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $usuario = $_SESSION["usuario"];
+?>
 <?php require_once "../componentesVistaUsuario/usuario_superior.php"?>
 
 <!--INICIO del cont principal-->
@@ -8,17 +12,26 @@
     $objeto = new Conexion();
     $conexion = $objeto->Conectar();
 
-    $consulta = "SELECT id, nombre, descripcion, reposirotioGit FROM proyecto";
+    $consulta = "SELECT nombre, repositorioGit FROM proyecto";
     $resultado = $conexion->prepare($consulta);
     $resultado->execute();
     $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
 
-    <div class="row">
+
+<div class="row">
+    <?php                            
+     foreach($data as $dat) {                                                        
+    ?>    
         <div class="col-6">
-            <h3 style="color:black" ;>Titulo del proyecto</h3>
+            <h3 style="color:black" ;><?php echo $dat['nombre'] ?></h3>
         </div>
+    <?php
+    }
+    ?>
+
+
         <div class="col-sm">
             <button class="btn btn-secondary btn-icon-split" id="btnRepo">
                 <span class="icon text-white-80">
@@ -56,43 +69,36 @@
                             aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="formTarea">
-                    <form class="form-inline">
+               
+                    <form id="formTarea">
                         <div class="modal-body">
+                            
                             <label for="nombreInput">Nombre:</label>
-                            <input class="form-control form-control-sm" type="text" name="nombre" id="nombreInput"
-                                autocomplete="off">
+                            <input class="form-control" type="text" name="nombre" id="nombre" >
 
                             <label for="descripcionInput">Descripcion:</label>
-                            <input class="form-control form-control-sm" type="text" name="descripcion"
-                                id="descripcionInput" autocomplete="off">
-
-                            <label for="prioridad" class="col-form-label">Participantes:</label>
+                            <input class="form-control" type="text" name="descripcion" id="descripcion" >
+                            
                             <br>
-                            <div class="well" style="max-height: 300px;overflow: auto;">
-                                <ul class="list-group checked-list-box">
-                                    <li class="list-group-item">Pepe</li>
-                                    <li class="list-group-item">Juan</li>
-                                    <li class="list-group-item">Etesech</li>
-                                </ul>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="prioridad">Prioridad</label>
+                                </div>
+                                <select class="custom-select"  name="prioridad" id="prioridad" >
+                                    <option selected></option>
+                                    <option value="baja">Baja</option>
+                                    <option value="media">Media</option>
+                                    <option value="alta">Alta</option>
+                                </select>
                             </div>
 
-                            <label for="prioridad" class="col-form-label">Prioridad:</label>
-                            <br>
-                            <input class="btn btn-success btn-md" type="button" value="Baja" id="prioridadInput">
-                            <input class="btn btn-warning btn-md" type="button" value="Media" id="prioridadInput">
-                            <input class="btn btn-primary btn-md" type="button" value="Alta" id="prioridadInput">
-                            <input class="btn btn-danger btn-md" type="button" value="Critica" id="prioridadInput">
-                            <br>
-
                             <label for="fechaInput" class="col-form-label">Fecha:</label>
-                            <input class="form-control" type="date" id="fechaInput">
+                            <input class="form-control" type="date" name="fecha" id="fecha" >
                             <br>
 
                             <button class="btn btn-dark" type="submit" id="add">Agregar</button>
                         </div>
-                    </form>
-                </form>
+                    </form>              
             </div>
         </div>
     </div>
@@ -108,8 +114,14 @@
                     </button>
                 </div>
                 <br>
-                <div class="col-lg" <label for="repositorio"> https://github.com/Caarloh/PolloRobot</label>
-                </div>
+                <?php                            
+                foreach($data as $dat) {                                                        
+                ?>    
+                <div class="col-lg" <label for="repositorio"> <?php echo $dat['repositorioGit'] ?></label></div>
+                <?php
+                }
+                ?>
+                
                 <br>
             </div>
         </div>
