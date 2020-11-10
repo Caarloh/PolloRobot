@@ -2,7 +2,8 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Vista Jefe Proyecto</h1>
+    <h1>TABLERO</h1>
+
 
     
 
