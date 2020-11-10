@@ -1,6 +1,3 @@
-<?php
-	session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,20 +22,8 @@
 
 </head>
 
+<body class="bg-gradient-primary">
 
-
-
-
-
-<body class="log-bg">
-<div id="wrapper">   
-<!-- Topbar -->
-	<nav class="lg-bar">
-
-		<img class="im-login" id=im-login src="https://1.bp.blogspot.com/-i2uV-KM_sJ4/X5Dmw-sOEQI/AAAAAAAACNU/cLtL_TM4K1UotOfNzx83DnP-L58GDSOnACLcBGAsYHQ/s300/LOGOTIPO.png">
-
-	</nav>
-</div>
   	<div class="container">
 
     <!-- Outer Row -->
@@ -50,22 +35,23 @@
           			<div class="card-body p-0">
             		<!-- Nested Row within Card Body -->
             			<div class="row">
+	              			<div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
               				<div class="col-lg-6">
             					<div class="p-5">
               						<div class="text-center">
                 						<h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
               						</div>
            							<form class="user" method="post">
-			     						<table width="330" height="250" border="0" class="text">
+			     						<table width="330" height="135" border="0" class="text">
 			          						<div class="form-group">
-			             						<td><input class="form-control" type="text" name="email" id="correo" placeholder="Ingresa el correo..."></td> 
+			             						<td><input type="text" name="email" id="correo" placeholder="Ingresa el correo..."></td> 
 			         						</div>
 									        <tr>
-									            <td><input class="form-control" type="password" name="password" id="pass" placeholder="Contraseña"></td> 
+									            <td><input type="password" name="password" id="pass" placeholder="Contraseña"></td> 
 									        </tr>
 									        <tr>
 									            <td align="center">
-									                <button class="blueButton" type="submit" id="boton" name="entrar" >Entrar</button>
+									                <button type="submit" id="boton" name="entrar" >Entrar</button>
 									            </td>
 									        </tr>
 									    </table>
@@ -94,8 +80,6 @@
 										while($i<sizeof($data)){
 											if($data[$i]['correo']==$email){
 												if($data[$i]['contrasena']==$password){
-													$_SESSION["usuario"] = $data[$i]['usuario'];//guardamos la variable
-													$usuario = $_SESSION["usuario"];
 													header ('Location: vistaUsuario/usuario.php');
 													##header("location: index.php");
 												}
@@ -107,6 +91,9 @@
 	                  				<div class="text-center">
 	                    				<a class="small" href="forgot-password.html">Olvido su contraseña?</a>
               						</div>
+              						<div class="text-center">
+                						<a class="small" href="register.php">Crear Cuenta!</a>
+              						</div>
             					</div>
           					</div>
             			</div>
@@ -116,10 +103,6 @@
     	</div>
   	</div>
 
-
-
-
-	  
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -129,9 +112,6 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
-
-
 
 </body>
 
