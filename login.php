@@ -58,7 +58,7 @@
            							<form class="user" method="post">
 			     						<table width="330" height="250" border="0" class="text">
 			          						<div class="form-group">
-			             						<td><input class="form-control" type="text" name="email" id="correo" placeholder="Ingresa el correo..."></td> 
+			             						<td><input class="form-control" type="text" name="email" id="correo" placeholder="Ingresa el correo o usuario..."></td> 
 			         						</div>
 									        <tr>
 									            <td><input class="form-control" type="password" name="password" id="pass" placeholder="Contraseña"></td> 
@@ -78,10 +78,13 @@
 									    $conexion = $objeto->Conectar();
 
 										$email="";
-									    $password="";
+										$password="";
+										$user="";
 									    if(isset($_POST['entrar'])){
-									        $email=$_POST['email'];
-									        $password=$_POST['password'];
+											$email=$_POST['email'];
+											$user=$_POST['email'];
+											$password=$_POST['password'];
+											
 									    }
 		                    			#echo $email;
 		                    			#echo $password;
@@ -92,7 +95,7 @@
 									    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 									    $i=0;
 										while($i<sizeof($data)){
-											if($data[$i]['correo']==$email){
+											if( ($data[$i]['usuario']==$user or $data[$i]['correo']==$email)){
 												if($data[$i]['contrasena']==$password){
 													$_SESSION["usuario"] = $data[$i]['usuario'];//guardamos la variable
 													$usuario = $_SESSION["usuario"];
