@@ -58,6 +58,51 @@ $(document).ready(()=>{
     
 });
 
+<<<<<<< Updated upstream
+=======
+
+$('#add').click(()=>{
+    idref = window.idref;
+    nombre = $('#nombre').val()!==''?$('#nombre').val():null;
+    descripcion = $('#descripcion').val()!==''?$('#descripcion').val():null;
+    prioridad = $('#prioridad').val()!==''?$('#prioridad').val():null;
+    fecha = $('#fecha').val()!==''?$('#fecha').val():null;
+    
+    let datos= "Nom="+nombre+"&Desc="+descripcion+"&Prio="+prioridad+"&Fech="+fecha+"&id="+idref;
+    $.ajax({
+        url: "../dataBase/agregarTarea.php",        
+        type: "POST",
+        data: datos,
+        success: function(data){             
+            console.log(data);          
+        }, error: function(data) {
+        console.log("No se ha podido obtener la información");
+        } 
+    });
+
+    $('#nombre').val('');
+    $('#descripcion').val('');
+    $('#fecha').val('');
+    $('#prioridad').val('');
+    if(nombre && descripcion && fecha && prioridad){
+        let id = dataCards.config.maxid+1;           
+        const newCard = {
+            id,
+            nombre,
+            descripcion,
+            prioridad,
+            fecha,
+            position:"gray"
+        }
+        dataCards.cards.push(newCard);
+        dataCards.config.maxid = id;
+        save();
+        appendComponents(newCard);
+        initializeCards();
+    }
+});
+
+>>>>>>> Stashed changes
 //funciones
 function initializeBoards(){    
     dataColors.forEach(item=>{

@@ -1,3 +1,13 @@
+<<<<<<< Updated upstream
+=======
+<?php
+  require_once "../dataBase/conexion.php";
+  $conexionBase = new Conexion();
+  $obtenerConexion = $conexionBase->Conectar();
+  session_start();
+  $usuario = $_SESSION["usuario"];
+?>
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 
