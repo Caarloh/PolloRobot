@@ -2,7 +2,6 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-<<<<<<< Updated upstream
 
     <?php
     include_once "../dataBase/conexion.php";
@@ -113,7 +112,6 @@
                 </div>
                 <br>
             </div>
-=======
     <h1 style="color:#0a133e">Proyectos a Cargo</h1>
         <div class="grid-container">
             <?php
@@ -164,9 +162,6 @@
             }
                 
             ?>
-            
-            
->>>>>>> Stashed changes
         </div>
 
 

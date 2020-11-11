@@ -58,8 +58,6 @@ $(document).ready(()=>{
     
 });
 
-<<<<<<< Updated upstream
-=======
 
 $('#add').click(()=>{
     idref = window.idref;
@@ -101,8 +99,6 @@ $('#add').click(()=>{
         initializeCards();
     }
 });
-
->>>>>>> Stashed changes
 //funciones
 function initializeBoards(){    
     dataColors.forEach(item=>{

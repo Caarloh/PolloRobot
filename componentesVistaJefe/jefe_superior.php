@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 <?php
   require_once "../dataBase/conexion.php";
   // error_reporting(error_reporting() & ~E_NOTICE);
@@ -8,7 +6,6 @@
   $obtenerConexion = $conexionBase->Conectar();
 ?>
 
->>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,7 +72,6 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-<<<<<<< Updated upstream
         <a class="nav-link" href="../vistaJefe/jefeProyecto.php">
         <i class="fas fa-code"></i>
           <span style="font-size: 1.1em";>Proyectos</span></a>
@@ -86,11 +82,9 @@
         <a class="nav-link" href="../vistaJefe/tableroProyecto.php">
         <i class="fab fa-trello"></i>
           <span style="font-size: 1.1em";>Tareas</span></a>
-=======
         <a class="nav-link" href="../vistaUsuario/usuario.php">
         <i class="fas fa-chevron-left"></i>
           <span style="font-size: 1.1em">Volver</span></a>
->>>>>>> Stashed changes
       </li>
 
       <!-- Divider -->
@@ -154,7 +148,6 @@
     </div>
       </hr>
 
-<<<<<<< Updated upstream
        <!-- Nav Item - Plantas Collapse Menu -->
        <li class="nav-item">
         <a class="nav-link collapsed" href="../vistaJefe/informes.php" >
@@ -162,7 +155,6 @@
           <span style="font-size: 1.1em";>Informes</span>
         </a>
       </li>
-=======
 
 
       <?php
@@ -190,8 +182,7 @@
               <li class="nav-item"><button class="btn btn-primary" data-toggle="modal" data-target="#modalVer" onclick="actualizaDatos('<?php echo $datos ?>')"><?php echo $columna['nombre'] ?></button></li>
 
               <?php }}?>
-       
->>>>>>> Stashed changes
+
 
       
      

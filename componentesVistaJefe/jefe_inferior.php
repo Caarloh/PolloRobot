@@ -56,7 +56,6 @@
 
   
     <!-- datatables JS -->
-<<<<<<< Updated upstream
     <script type="text/javascript" src="../vendor/datatables/datatables.min.js"></script>  
     
      <!-- Page level plugins -->
@@ -66,14 +65,12 @@
     <script src="../js/demo/chart-area-demo.js"></script>
     <script src="../js/demo/chart-pie-demo.js"></script>
     <script src="../js/demo/chart-bar-demo.js"></script>
-=======
+
     <script type="text/javascript" src="../vendor/datatables/datatables.min.js"></script> 
     <script type="text/javascript">
         window.idref = "<?php echo $_GET['id']; ?>";
     </script>
     <script type="text/javascript" src="../js/jefe/jefe.js"></script>
-    
->>>>>>> Stashed changes
 
     <!-- código propio JS --> 
     <script>if (typeof module === 'object') {window.module = module; module = undefined;} </script>

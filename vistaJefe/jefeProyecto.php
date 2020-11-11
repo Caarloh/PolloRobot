@@ -2,9 +2,7 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-<<<<<<< Updated upstream
     <h1>Vista Jefe Proyecto</h1>
-=======
     <?php
 
     $consulta = 'SELECT id, nombre, repositorioGit FROM proyecto WHERE id LIKE "%'.$id.'%"';
@@ -121,7 +119,6 @@
             </div>
         </div>
     </div>
->>>>>>> Stashed changes
 
     
 
