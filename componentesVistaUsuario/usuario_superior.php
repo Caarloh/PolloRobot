@@ -1,6 +1,6 @@
 <?php
   require_once "../dataBase/conexion.php";
-  $usuario = "EduVale";
+  $usuario = "Homero_Jimeno";
   $conexionBase = new Conexion();
   $obtenerConexion = $conexionBase->Conectar();
 ?>
