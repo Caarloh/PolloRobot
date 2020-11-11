@@ -118,7 +118,7 @@ $("#formTrabajador").submit(function(e){
         tipoEmpleado = cargo;
     }
     
-    usuario = nombre+" "+apellidos;
+    usuario = nombre+"_"+apellidos;
     contrasena = nombre.charAt(0)+nombre.charAt(1)+apellidos.charAt(0)+apellidos.charAt(1);
     console.log(usuario);
     console.log(contrasena);
@@ -139,7 +139,8 @@ $("#formTrabajador").submit(function(e){
                 cargo = data[0].cargo;            
                 contrasena = data[0].contrasena;
                 paginagit = data[0].perfilGit;
-                tipoEmpleado = data[0].tipoEmpleado;         
+                tipoEmpleado = data[0].tipoEmpleado; 
+                        
             }, error: function(data) {
             console.log("No se ha podido obtener la información");
             }     

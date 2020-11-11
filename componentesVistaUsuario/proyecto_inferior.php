@@ -23,8 +23,8 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -57,11 +57,7 @@
   
     <!-- datatables JS -->
     <script type="text/javascript" src="../vendor/datatables/datatables.min.js"></script>    
-    
     <!-- código propio JS --> 
-    <script type="text/javascript" src="../js/administrador/crudtrabajador.js"></script> 
-
-    <script type="text/javascript" src="../js/administrador/crudproyecto.js"></script> 
 
     
 

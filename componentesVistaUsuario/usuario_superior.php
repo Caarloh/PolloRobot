@@ -1,3 +1,9 @@
+<?php
+  require_once "../dataBase/conexion.php";
+  $usuario = "Homero_Jimeno";
+  $conexionBase = new Conexion();
+  $obtenerConexion = $conexionBase->Conectar();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -48,7 +48,7 @@ CREATE TABLE `Nota` (
   `id` int(11) NOT NULL,
   `usuario` varchar(200) NOT NULL,
   `descripcion` varchar(1000) NOT NULL,
-  `refTarea` int(11) NOT NULL
+  `refTarea` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -84,10 +84,9 @@ CREATE TABLE `RelacionProyectoMiembro` (
 --
 
 CREATE TABLE `Tarea` (
-  `id` int(11) NOT NULL,
   `nombre` varchar(500) NOT NULL,
   `descripcion` varchar(1000) NOT NULL,
-  `prioridad` int(11) NOT NULL,
+  `prioridad` varchar(50) NOT NULL,
   `estado` varchar(50) NOT NULL,
   `fechaLimite` varchar(50) NOT NULL,
   `refProyecto` int(11) NOT NULL
@@ -135,9 +134,10 @@ ALTER TABLE `RelacionProyectoMiembro`
 --
 -- Indexes for table `Tarea`
 --
-ALTER TABLE `Tarea`
-  ADD PRIMARY KEY (`id`),
+ALTER TABLE `Tarea`  
+  ADD PRIMARY KEY (`nombre`),
   ADD KEY `FKRelacionProyectoTarea` (`refProyecto`);
+	
 
 --
 -- Constraints for dumped tables
@@ -154,7 +154,7 @@ ALTER TABLE `InvitacionProyecto`
 --
 ALTER TABLE `Nota`
   ADD CONSTRAINT `FKRelacionMiebroNota` FOREIGN KEY (`usuario`) REFERENCES `Empleado` (`usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FKRelacionTareaNota` FOREIGN KEY (`refTarea`) REFERENCES `Tarea` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FKRelacionTareaNota` FOREIGN KEY (`refTarea`) REFERENCES `Tarea` (`nombre`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Proyecto`
@@ -172,5 +172,5 @@ ALTER TABLE `RelacionProyectoMiembro`
 --
 -- Constraints for table `Tarea`
 --
-ALTER TABLE `Tarea`
+ALTER TABLE `Tarea`  
   ADD CONSTRAINT `FKRelacionProyectoTarea` FOREIGN KEY (`refProyecto`) REFERENCES `Proyecto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
