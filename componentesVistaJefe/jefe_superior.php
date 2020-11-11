@@ -67,15 +67,7 @@
       <a class="sidebar-brand d-block align-items-center justify-content-center" href="admin.php">
         <img class="img" src="https://1.bp.blogspot.com/-i2uV-KM_sJ4/X5Dmw-sOEQI/AAAAAAAACNU/cLtL_TM4K1UotOfNzx83DnP-L58GDSOnACLcBGAsYHQ/s300/LOGOTIPO.png">
         <br>
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="../vistaJefe/jefeProyecto.php">
-        <i class="fas fa-code"></i>
-          <span style="font-size: 1.1em";>Proyectos</span></a>
-      </li>
+      </a>
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
@@ -148,13 +140,34 @@
     </div>
       </hr>
 
-       <!-- Nav Item - Plantas Collapse Menu -->
-       <li class="nav-item">
-        <a class="nav-link collapsed" href="../vistaJefe/informes.php" >
-        <i class="fas fa-chart-bar"></i>
-          <span style="font-size: 1.1em";>Informes</span>
-        </a>
-      </li>
+
+
+        <?php
+          $arregloUsuarios = array();
+          foreach($obtenerConexion->query("SELECT DISTINCT refUsuario FROM RelacionProyectoMiembro WHERE refProyecto='$id'") as $columna) {
+            $refUsuario = $columna['refUsuario'];
+              
+            array_push($arregloUsuarios, $refUsuario);
+          }
+
+
+          for ($i = 0; $i < count($arregloUsuarios); $i++){
+            foreach($obtenerConexion->query("SELECT * FROM Empleado WHERE usuario='$arregloUsuarios[$i]'") as $columna) {
+              $datos = $id.'||'.$arregloUsuarios[$i];
+
+              foreach($obtenerConexion->query("SELECT * FROM RelacionProyectoMiembro WHERE refProyecto='$id' AND refUsuario='$arregloUsuarios[$i]'") as $columna2) {
+                if($columna2['rol']==" " || $columna2['rol']=="" || $columna2['rol']==null){
+
+                }
+                else{
+                  $nuevo = '||'.$columna2['rol'];
+                  $datos.=$nuevo;
+                }
+              }?>
+              <li class="nav-item"><button class="btn btn-primary" data-toggle="modal" data-target="#modalVer" onclick="actualizaDatos('<?php echo $datos ?>')"><?php echo $columna['nombre'] ?></button></li>
+
+              <?php }}?>
+       
 
 
       <?php
@@ -209,18 +222,6 @@
   <i class="fa fa-bars"></i>
 </button>
 
-<!-- Topbar Search -->
-<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-  <div class="input-group">
-    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-primary" type="button">
-        <i class="fas fa-search fa-sm"></i>
-      </button>
-    </div>
-  </div>
-</form>
-
 <!-- Topbar Navbar -->
 <ul class="navbar-nav ml-auto">
 
@@ -229,19 +230,6 @@
     <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i class="fas fa-search fa-fw"></i>
     </a>
-    <!-- Dropdown - Messages -->
-    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-      <form class="form-inline mr-auto w-100 navbar-search">
-        <div class="input-group">
-          <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="button">
-              <i class="fas fa-search fa-sm"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
   </li>
 
   <div class="topbar-divider d-none d-sm-block"></div>

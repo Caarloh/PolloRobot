@@ -120,11 +120,6 @@
         </div>
     </div>
 
-    
-
-   
-
-
 </div>
 <!--FIN del cont principal-->
 
