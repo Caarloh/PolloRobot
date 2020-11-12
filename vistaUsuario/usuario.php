@@ -1,133 +1,63 @@
-<?php
-    session_start();
-    $usuario = $_SESSION["usuario"];
-?>
 <?php require_once "../componentesVistaUsuario/usuario_superior.php"?>
 
 <!--INICIO del cont principal-->
 <div class="container">
-
-    <?php
-    include_once "../dataBase/conexion.php";
-    $objeto = new Conexion();
-    $conexion = $objeto->Conectar();
-
-    $consulta = "SELECT nombre, repositorioGit FROM proyecto";
-    $resultado = $conexion->prepare($consulta);
-    $resultado->execute();
-    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-    ?>
-
-
-
-<div class="row">
-    <?php                            
-     foreach($data as $dat) {                                                        
-    ?>    
-        <div class="col-6">
-            <h3 style="color:black" ;><?php echo $dat['nombre'] ?></h3>
-        </div>
-    <?php
-    }
-    ?>
-
-
-        <div class="col-sm">
-            <button class="btn btn-secondary btn-icon-split" id="btnRepo">
-                <span class="icon text-white-80">
-                    <i class="fab fa-github fa-lg"></i>
-                </span>
-                <span class="text">Repositorio</span>
-            </button>
-        </div>
-        <div class="col-sm">
-            <button class="btn btn-secondary btn-icon-split" id="btnTarea">
-                <span class="icon text-white-80">
-                    <i class="fas fa-plus fa-lg"></i>
-                </span>
-                <span class="text">Agregar Tarea</span>
-            </button>
-        </div>
-    </div>
-
-    <br>
-
-    <div id="loadingScreen">
-        <div class="loader"></div>
-    </div>
-
-    <div class="boards overflow-auto p-0" id="boardsContainer">
-    </div>
-
-    <!--Modal para Tarea-->
-    <div class="modal fade" id="modalTarea" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-               
-                    <form id="formTarea">
-                        <div class="modal-body">
-                            
-                            <label for="nombreInput">Nombre:</label>
-                            <input class="form-control" type="text" name="nombre" id="nombre" >
-
-                            <label for="descripcionInput">Descripcion:</label>
-                            <input class="form-control" type="text" name="descripcion" id="descripcion" >
-                            
-                            <br>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="prioridad">Prioridad</label>
-                                </div>
-                                <select class="custom-select"  name="prioridad" id="prioridad" >
-                                    <option selected></option>
-                                    <option value="baja">Baja</option>
-                                    <option value="media">Media</option>
-                                    <option value="alta">Alta</option>
-                                </select>
-                            </div>
-
-                            <label for="fechaInput" class="col-form-label">Fecha:</label>
-                            <input class="form-control" type="date" name="fecha" id="fecha" >
-                            <br>
-
-                            <button class="btn btn-dark" type="submit" id="add">Agregar</button>
+    <h1 style="color:#0a133e">Proyectos a Cargo</h1>
+        <div class="grid-container">
+            <?php
+                foreach($obtenerConexion->query("SELECT * FROM Proyecto WHERE jefeProyecto='$usuario'") as $columna) {
+                    echo '
+                    <div class="card">
+                        <div class="card-header">
+                        '.$columna['nombre'].'
                         </div>
-                    </form>              
-            </div>
-        </div>
-    </div>
-
-    <!--Modal para Repositorio-->
-    <div class="modal fade" id="modalRepo" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <br>
-                <?php                            
-                foreach($data as $dat) {                                                        
-                ?>    
-                <div class="col-lg" <label for="repositorio"> <?php echo $dat['repositorioGit'] ?></label></div>
-                <?php
+                        <div class="card-body">
+                                <p class="card-text">'.$columna['descripcion'].'</p>
+                                <a href="#">'.$columna['repositorioGit'].'</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                                <a class="btn2 btn2-primary" href="../vistaJefe/jefeProyecto.php?id='.$columna['id'].'">ACCEDER</a>
+                        </div>
+                  </div>
+                  
+                        ';
                 }
-                ?>
-                
-                <br>
-            </div>
+            ?>
+            
+            
         </div>
-    </div>
+        <h1 style="color:#0a133e"></h1>
+        <h1 style="color:#0a133e">Proyectos en lo que participas</h1>
+        <div class="grid-container">
+            <?php
+                foreach($obtenerConexion->query("SELECT DISTINCT refProyecto FROM RelacionProyectoMiembro WHERE refUsuario='$usuario'") as $columna) {
+                    $idProyecto = $columna['refProyecto'];
+                    foreach($obtenerConexion->query("SELECT * FROM Proyecto WHERE id='$idProyecto' AND jefeProyecto!='$usuario'") as $columna2) {            
+                    echo '
+                    <div class="card">
+                        <div class="card-header">
+                        '.$columna2['nombre'].'
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">'.$columna2['descripcion'].'</p>
+                            <a href="#">'.$columna2['repositorioGit'].'</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                        <a class="btn2 btn2-primary" href="proyecto.php?id='.$columna2['id'].'">VER</a>
+                        </div>
+                  </div>
+                  
+                        ';
+                }
+            }
+                
+            ?>
+            
+            
+        </div>
 
+
+    
 </div>
 <!--FIN del cont principal-->
 
-<?php require_once "../componentesVistaUsuario/usuario_inferior.php"?>
