@@ -6,35 +6,100 @@
 
     <div class="grid-container">
         <div class="card">
+                <div class="card-bodyAdmin">
+                      <img class="img-card" src="https://static.wixstatic.com/media/a2eeb0_d88071155db24fcaa7f8025f3e0433d0~mv2.jpg/v1/fill/w_580,h_365,al_c,q_90/a2eeb0_d88071155db24fcaa7f8025f3e0433d0~mv2.jpg">
+                </div>
+         <button id="btnNuevoTrabajador" type="button" class="btnAdmin btn-successAdmin bg-gradient-primaryAdmin" data-toggle="modal" data-target="#modal1">Ingresar Usuario</button>                   
+        </div>
 
-                        <div class="card-bodyAdmin">
-                            <img class="img-card" src="https://static.wixstatic.com/media/a2eeb0_d88071155db24fcaa7f8025f3e0433d0~mv2.jpg/v1/fill/w_580,h_365,al_c,q_90/a2eeb0_d88071155db24fcaa7f8025f3e0433d0~mv2.jpg">
-                        </div>
-                        <button id="btnNuevoTrabajador" type="button" class="btnAdmin btn-successAdmin bg-gradient-primaryAdmin" data-toggle="modal" data-target="#modal1">Ingresar Usuario</button>                   
-    </div>
-
-    <div class="card">
+        <div class="card">
    
                     <div class="card-bodyAdmin">
                         <img class="img-card" src="https://www.nyfa.edu/student-resources/wp-content/uploads/2015/04/laptop-3373638_640.jpg">
                     </div>
-                    <button id="btnNuevoProyecto" type="button" class="btnAdmin btn-successAdmin bg-gradient-primaryAdmin" data-toggle="modal" data-target="#modal2">Crear Proyecto</button>
+                    <button id="btnNuevoProyecto" type="button" class="btnAdmin btn-successAdmin bg-gradient-primaryAdmin" data-toggle="modal" data-target="#modalCRUD">Crear Proyecto</button>
+        </div>
+
+
+
+    </div>
+
+
+<!--CREACION PROYECTO--> 
+
+
+
+<div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--Cabecera del modal-->
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="formProyectoP" >
+                    <div class="modal-body">
+                        <!-- Cuerpo del Modal-->
+                        <div class="row justify-content-center align-items-center minh-100">
+                            <!-- Imagen -->
+                            <div class="col-sm-4">
+                                <img src="../img/polloicon.png" class="rounded img-fluid " >
+                            </div>
+                            <!-- Inputs-->
+                            <div class="col-sm-12 row justify-content-center align-items-center minh-100">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="nombreP" class="col-form-label">Nombre:</label>
+                                        <input type="text" class="form-control" id="nombreP">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descripcion" class="col-form-label">Descripcion:</label>
+                                        <input type="text" class="form-control" id="descripcion">
+                                    </div>
+                                    <div class="form-group" method="post" action="#">
+                                        <label for="jefe" class="col-form-label">Jefe de Proyecto:</label>
+                                        <input class="form-control" type="text" name="jefe" id="jefe" placeholder="Buscar...">
+                                    </div>
+                                    <div class="form-group" id="suggestions"></div>
+                                    <div class="form-group">
+                                        <label for="repGit" class="col-form-label">Repositorio Git:</label>
+                                        <input type="text" class="form-control" id="repGit">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                   
-    </div>
+                            
+                    </div>
 
-
-
-
-            
-    </div>
-    
+                    <div class="modal-footer">
+                        <!--Guardar y cancelar-->
+                        <button type="submit" id="btnGuardar" class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+<!--FIN CREACION PROYECTO--> 
+
+
+<!--FIN del cont principal--> 
+<script>
+    function mostrarTipos(){
+        document.getElementById("tipos").style.display = "block";
+    }
+    function ocultarTipos(){
+        document.getElementById("tipos").style.display = "none";
+    }
+
     
-    <!--Modal para CRUD-->
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+</script>
+
+<!--Modal para CRUD-->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -105,8 +170,7 @@
                     </div>
                     <div class="modal-footer">
                         <!--Guardar y cancelar-->
-                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" id="btnGuardar" class="btn btn-success" >Guardar</button>
+                        <button type="submit" id="btnGuardar" class="btn btn-success">Guardar</button>
                     </div>
                 </form>
             </div>
@@ -114,75 +178,9 @@
     </div>
 
 
-    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <!--Cabecera del modal-->
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form id="formProyecto" >
-                    <div class="modal-body">
-                        <!-- Cuerpo del Modal-->
-                        <div class="row justify-content-center align-items-center minh-100">
-                            <!-- Imagen -->
-                            <div class="col-sm-4">
-                                <img src="../img/polloicon.png" class="rounded img-fluid " >
-                            </div>
-                            <!-- Inputs-->
-                            <div class="col-sm-12 row justify-content-center align-items-center minh-100">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="nombre" class="col-form-label">Nombre:</label>
-                                        <input type="text" class="form-control" id="nombre">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="descripcion" class="col-form-label">Descripcion:</label>
-                                        <input type="text" class="form-control" id="descripcion">
-                                    </div>
-                                    <div class="form-group" method="post" action="#">
-                                        <label for="jefe" class="col-form-label">Jefe de Proyecto:</label>
-                                        <input class="form-control" type="text" name="jefe" id="jefe" placeholder="Buscar...">
-                                    </div>
-                                    <div class="form-group" id="suggestions"></div>
-                                    <div class="form-group">
-                                        <label for="repGit" class="col-form-label">Repositorio Git:</label>
-                                        <input type="text" class="form-control" id="repGit">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                            
-                    </div>
 
-                    <div class="modal-footer">
-                        <!--Guardar y cancelar-->
-                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" id="btnGuardar1" class="btn btn-success">Guardar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-   
-   
 
 
 </div>
-<!--FIN del cont principal--> 
-<script>
-    function mostrarTipos(){
-        document.getElementById("tipos").style.display = "block";
-    }
-    function ocultarTipos(){
-        document.getElementById("tipos").style.display = "none";
-    }
 
-    
-</script>
 <?php require_once "../componentesVistaAdministrador/admin_inferior.php"?>

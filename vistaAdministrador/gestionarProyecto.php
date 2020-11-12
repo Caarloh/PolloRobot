@@ -7,7 +7,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <button id="btnNuevoProyecto" type="button" class="btn btn-success bg-gradient-primary" data-toggle="modal">Crear Proyecto</button>
+                <button id="btnNuevoProyecto" type="button" class="btnAdmin btn-successAdmin bg-gradient-primaryAdmin" data-toggle="modal" data-target="#modalCRUD">Crear Proyecto</button>
                 </div>
             </div>
     </div>

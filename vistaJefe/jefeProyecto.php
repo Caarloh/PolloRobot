@@ -2,7 +2,6 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Vista Jefe Proyecto</h1>
     <?php
 
     $consulta = 'SELECT id, nombre, repositorioGit FROM proyecto WHERE id LIKE "%'.$id.'%"';
@@ -18,7 +17,7 @@
      foreach($data as $dat) {                                                        
     ?>    
         <div class="col-6">
-            <h3 style="color:black" ;><?php echo $dat['nombre'] ?></h3>
+            <h3 style="color:#242c75" ;><?php echo $dat['nombre'] ?></h3>
         </div>
     <?php
     }

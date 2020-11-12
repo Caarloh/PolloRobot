@@ -46,7 +46,7 @@ $(document).on("click", ".btnEditarProyecto", function () {
     precio = parseInt(fila.find('td:eq(4)').text());
     stock = parseInt(fila.find('td:eq(5)').text());
     $("#id_proveedor").val(id_proveedor);
-    $("#nombre").val(nombre);
+    $("#nombreP").val(nombre);
     $("#forma").val(forma);
     $("#precio").val(precio);
     $("#stock").val(stock);
@@ -55,7 +55,7 @@ $(document).on("click", ".btnEditarProyecto", function () {
     $(".modal-header").css("background-color", "#3498DB");
     $(".modal-header").css("color", "white");
     $(".modal-title").text("Editar Trabajador");
-    $("#modal2").modal("show");
+    $("#modalCRUD").modal("show");
 
 });
 
@@ -78,9 +78,9 @@ $(document).on("click", ".btnBorrarProyecto", function () {
     }
 });
 
-$("#formProyecto").submit(function (e) {
+$("#formProyectoP").submit(function (e) {
     e.preventDefault();
-    nombre = $.trim($("#nombre").val());
+    nombre = $.trim($("#nombreP").val());
     descripcion = $.trim($("#descripcion").val());
     jefe = $.trim($("#jefe").val());
     repGit = $.trim($("#repGit").val());
@@ -88,7 +88,7 @@ $("#formProyecto").submit(function (e) {
 
     var showModal = true;
     if (nombre == "") {
-        $("#nombre").addClass("border-danger");
+        $("#nombreP").addClass("border-danger");
         showModal = false;
     }
     if (descripcion == "") {
@@ -105,7 +105,7 @@ $("#formProyecto").submit(function (e) {
     }
 
     if (showModal) {
-        $("#nombre").removeClass("border-danger");
+        $("#nombreP").removeClass("border-danger");
         $("#descripcion").removeClass("border-danger");
         $("#jefe").removeClass("border-danger");
         $("#repGit").removeClass("border-danger");
@@ -133,7 +133,7 @@ $("#formProyecto").submit(function (e) {
                 console.log("No se ha podido obtener la informaci�n");
             }
         });
-        $("#modal2").modal("hide");
+        $("#modalCRUD").modal("hide");
     }
 });
 
