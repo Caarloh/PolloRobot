@@ -3,6 +3,8 @@
 <div class="container">
     <h1>Gestion de Proyecto</h1>
 <div class="container">
+
+
             <div class="row">
                 <div class="col-lg-12">
                     <button id="btnNuevoProyecto" type="button" class="btn btn-success bg-gradient-primary" data-toggle="modal">Crear Proyecto</button>

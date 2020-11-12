@@ -38,10 +38,11 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-            <div class="modal-header" >
+                <div class="modal-header">
                     <!--Cabecera del modal-->
-                    <h5 class="modal-title">Registrar Nuevo Trabajador</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <form id="formTrabajador" >
@@ -105,7 +106,7 @@
                     <div class="modal-footer">
                         <!--Guardar y cancelar-->
                         <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" id="btnGuardar" class="btn btn-success" data-dismiss="modal">Guardar</button>
+                        <button type="submit" id="btnGuardar" class="btn btn-success" >Guardar</button>
                     </div>
                 </form>
             </div>
@@ -113,13 +114,11 @@
     </div>
 
 
-
     <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="white">
-
+                <div class="modal-header">
                     <!--Cabecera del modal-->
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -163,12 +162,14 @@
                     <div class="modal-footer">
                         <!--Guardar y cancelar-->
                         <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" id="btnGuardar" class="btn btn-success" data-dismiss="modal" >Guardar</button>
+                        <button type="submit" id="btnGuardar1" class="btn btn-success">Guardar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+   
    
 
 
