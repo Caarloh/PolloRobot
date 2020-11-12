@@ -2,13 +2,10 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
+
     
-    
 
-   
-
-
-</div>
+</div>   
 <!--FIN del cont principal-->
 
 <?php require_once "../componentesVistaJefe/jefe_inferior.php"?>

@@ -1,9 +1,12 @@
+
 <?php
   require_once "../dataBase/conexion.php";
-  $usuario = "Homero_Jimeno";
   $conexionBase = new Conexion();
   $obtenerConexion = $conexionBase->Conectar();
+  session_start();
+  $usuario = $_SESSION["usuario"];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,14 +1,13 @@
-<?php require_once "../componentesVistaJefe/jefe_superior.php"?>
+<?php require_once "../componentesVistaUsuario/usuario_superior.php"?>
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Vista Jefe Proyecto</h1>
-    <?php
 
-    $consulta = 'SELECT id, nombre, repositorioGit FROM proyecto WHERE id LIKE "%'.$id.'%"';
+    <?php
+    $consulta = "SELECT id, nombre, repositorioGit FROM proyecto";
     $resultado = $obtenerConexion->prepare($consulta);
     $resultado->execute();
-    $data=$resultado;
+    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
 
@@ -123,4 +122,4 @@
 </div>
 <!--FIN del cont principal-->
 
-<?php require_once "../componentesVistaJefe/jefe_inferior.php"?>
+<?php require_once "../componentesVistaUsuario/usuario_inferior.php"?>
