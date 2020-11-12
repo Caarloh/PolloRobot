@@ -39,11 +39,13 @@ $(document).ready(()=>{
 
 
 $('#add').click(()=>{
+    idref = window.idref;
     nombre = $('#nombre').val()!==''?$('#nombre').val():null;
     descripcion = $('#descripcion').val()!==''?$('#descripcion').val():null;
     prioridad = $('#prioridad').val()!==''?$('#prioridad').val():null;
     fecha = $('#fecha').val()!==''?$('#fecha').val():null;
-    let datos= "Nom="+nombre+"&Desc="+descripcion+"&Prio="+prioridad+"&Fech="+fecha
+    
+    let datos= "Nom="+nombre+"&Desc="+descripcion+"&Prio="+prioridad+"&Fech="+fecha+"&id="+idref;
     $.ajax({
         url: "../dataBase/agregarTarea.php",        
         type: "POST",
@@ -76,7 +78,6 @@ $('#add').click(()=>{
         initializeCards();
     }
 });
-
 //funciones
 function initializeBoards(){    
     dataColors.forEach(item=>{

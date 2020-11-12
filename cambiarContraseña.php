@@ -53,19 +53,22 @@
               				<div class="col-lg-6">
             					<div class="p-5">
               						<div class="text-center">
-                						<h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
+                						<h1 class="h4 text-gray-900 mb-4">Cambio de contraseña</h1>
               						</div>
            							<form class="user" method="post">
 			     						<table width="330" height="250" border="0" class="text">
 			          						<div class="form-group">
 			             						<td><input class="form-control" type="text" name="email" id="correo" placeholder="Ingresa el correo o usuario..."></td> 
 			         						</div>
+                                             <tr>
+									            <td><input class="form-control" type="password" name="password" id="pass" placeholder="Nueva contraseña..."></td> 
+									        </tr>                                             
 									        <tr>
-									            <td><input class="form-control" type="password" name="password" id="pass" placeholder="Contraseña"></td> 
+									            <td><input class="form-control" type="password" name="newPassword" id="pass" placeholder="Confirmar nueva contraseña..."></td> 
 									        </tr>
 									        <tr>
 									            <td align="center">
-									                <button class="blueButton" type="submit" id="boton" name="entrar" >Entrar</button>
+									                <button class="blueButton" type="submit" id="boton" name="Confirmar" >ConfirmarCambio</button>
 									            </td>
 									        </tr>
 									    </table>
@@ -79,11 +82,13 @@
 
 										$email="";
 										$password="";
-										$user="";
-									    if(isset($_POST['entrar'])){
+                                        $user="";
+                                        $newPassword="";
+									    if(isset($_POST['Confirmar'])){
 											$email=$_POST['email'];
 											$user=$_POST['email'];
-											$password=$_POST['password'];
+                                            $password=$_POST['password'];
+                                            $newPassword=$_POST['newPassword'];
 											
 									    }
 		                    			#echo $email;
@@ -96,10 +101,22 @@
 									    $i=0;
 										while($i<sizeof($data)){
 											if( ($data[$i]['usuario']==$user or $data[$i]['correo']==$email)){
-												if($data[$i]['contrasena']==$password){
-													$_SESSION["usuario"] = $data[$i]['usuario'];//guardamos la variable
+												if($password==$newPassword){
+                                                    $user=$data[$i]['usuario'];
+                                                    $_SESSION["usuario"] = $data[$i]['usuario'];//guardamos la variable
+                                                    $objeto = new Conexion();
+                                                    $conexion = $objeto->Conectar();
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    $consulta = "UPDATE empleado set contrasena='$newPassword'
+                                                    where usuario='$user';";			
+                                                            $resultado = $conexion->prepare($consulta);
+                                                            $resultado->execute(); 
+                                                            
 													$usuario = $_SESSION["usuario"];
-													header ('Location: vistaUsuario/usuario.php');
+													header ('Location: login.php');
 													##header("location: index.php");
 												}
 											}
@@ -108,7 +125,7 @@
 			                    	?>
               						<hr>
 	                  				<div class="text-center">
-	                    				<a class="small" href="cambiarContraseña.php">Olvido su contraseña?</a>
+	                    				<a class="small" href="login.php">Volver al inicio</a>
               						</div>
             					</div>
           					</div>
@@ -117,6 +134,28 @@
         		</div>
       		</div>
     	</div>
+        <div class="modal fade" id="modalRepo" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <br>
+                <?php                            
+                foreach($data as $dat) {                                                        
+                ?>    
+                <div class="col-lg" <label for="repositorio"> <?php echo $dat['repositorioGit'] ?></label></div>
+                <?php
+                }
+                ?>
+                
+                <br>
+            </div>
+        </div>
+    </div>        
   	</div>
 
 

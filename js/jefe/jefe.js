@@ -63,3 +63,75 @@ function guardarDatos(){
         }
       });
 }
+
+$("#btnAddMiembro").click(function () {
+    $("#formPlantas").trigger("reset");
+    $(".modal-header").css("background-color", "#1d3557");
+    $(".modal-header").css("color", "white");
+    $(".modal-title").text('Crear nuevo proyecto');
+    $("#modalCRUD").modal("show");
+    id = null;
+    opcion = 1; //alta
+});
+
+$("#formMiembro").submit(function (e) {
+    e.preventDefault();
+    miembro = $.trim($("#miembro").val());
+    idref = window.idref;
+
+    var showModal = true;
+    if (miembro == "") {
+        $("#miembro").addClass("border-danger");
+        showModal = false;
+    }
+
+    if (showModal) {
+        $("#miembro").removeClass("border-danger");
+    }
+
+    rol = $('input[name=tipo]:checked', '#formMiembro').val();
+
+
+    if (showModal) {
+        $.ajax({
+            url: "../dataBase/insertarM.php",
+            type: "POST",
+            data: {miembro: miembro, idref:idref, rol:rol},
+            success: function (data) {
+                console.log(data);
+                
+
+            }, error: function (data) {
+                console.log("No se ha podido obtener la información");
+            }
+        });
+        $("#modalCRUD").modal("hide");
+    }
+});
+
+$(document).ready(function() {
+    $('#miembro').on('keyup', function() {
+        var miembro = $(this).val();        
+        var dataString = 'miembro='+miembro;
+    $.ajax({
+            type: "POST",
+            url: "../dataBase/buscarM.php",
+            data: dataString,
+            success: function(data) {
+                //Escribimos las sugerencias que nos manda la consulta
+                $('#suggestions').fadeIn(1000).html(data);
+                //Al hacer click en alguna de las sugerencias
+                $('.suggest-element').on('click', function(){
+                        //Obtenemos la id unica de la sugerencia pulsada
+                        var id = $(this).attr('id');
+                        //Editamos el valor del input con data de la sugerencia pulsada
+                        $('#miembro').val($('#'+id).attr('data'));
+                        //Hacemos desaparecer el resto de sugerencias
+                        $('#suggestions').fadeOut(1000);
+                        alert('Has seleccionado el '+id+' '+$('#'+id).attr('data'));
+                        return false;
+                });
+            }
+        });
+    });
+}); 

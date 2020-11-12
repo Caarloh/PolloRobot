@@ -1,9 +1,12 @@
+
 <?php
   require_once "../dataBase/conexion.php";
-  $usuario = "Homero_Jimeno";
   $conexionBase = new Conexion();
   $obtenerConexion = $conexionBase->Conectar();
+  session_start();
+  $usuario = $_SESSION["usuario"];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +42,7 @@
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-block align-items-center justify-content-center" href="admin.php">
+      <a class="sidebar-brand d-block align-items-center justify-content-center" href="usuario.php">
         <img class="img" src="https://1.bp.blogspot.com/-i2uV-KM_sJ4/X5Dmw-sOEQI/AAAAAAAACNU/cLtL_TM4K1UotOfNzx83DnP-L58GDSOnACLcBGAsYHQ/s300/LOGOTIPO.png">
         <br>
       </a>
