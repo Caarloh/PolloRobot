@@ -86,7 +86,7 @@
         </div>
         <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <!--Cabecera del modal-->
@@ -136,12 +136,10 @@
                     </div>
                 </form>
             </div>
+          </div>
         </div>
-    </div>
       </hr>
-
-
-
+      <hr class="sidebar-divider">
         <?php
           $arregloUsuarios = array();
           foreach($obtenerConexion->query("SELECT DISTINCT refUsuario FROM RelacionProyectoMiembro WHERE refProyecto='$id'") as $columna) {
@@ -164,44 +162,15 @@
                   $datos.=$nuevo;
                 }
               }?>
-              <li class="nav-item"><button class="btn btn-primary" data-toggle="modal" data-target="#modalVer" onclick="actualizaDatos('<?php echo $datos ?>')"><?php echo $columna['nombre'] ?></button></li>
-
-              <?php }}?>
-       
-
-
-      <?php
-          $arregloUsuarios = array();
-          foreach($obtenerConexion->query("SELECT DISTINCT refUsuario FROM RelacionProyectoMiembro WHERE refProyecto='$id'") as $columna) {
-            $refUsuario = $columna['refUsuario'];
               
-            array_push($arregloUsuarios, $refUsuario);
-          }
-
-
-          for ($i = 0; $i < count($arregloUsuarios); $i++){
-            foreach($obtenerConexion->query("SELECT * FROM Empleado WHERE usuario='$arregloUsuarios[$i]'") as $columna) {
-              $datos = $id.'||'.$arregloUsuarios[$i];
-
-              foreach($obtenerConexion->query("SELECT * FROM RelacionProyectoMiembro WHERE refProyecto='$id' AND refUsuario='$arregloUsuarios[$i]'") as $columna2) {
-                if($columna2['rol']==" " || $columna2['rol']=="" || $columna2['rol']==null){
-
-                }
-                else{
-                  $nuevo = '||'.$columna2['rol'];
-                  $datos.=$nuevo;
-                }
-              }?>
-              <li class="nav-item"><button class="btn btn-primary" data-toggle="modal" data-target="#modalVer" onclick="actualizaDatos('<?php echo $datos ?>')"><?php echo $columna['nombre'] ?></button></li>
-
+                <div class="col-lg-12">
+                  <li class="nav-item">
+                    <img src="../img/comprobado.png"></img>
+                    <button class="btn btn-primary btn2" data-toggle="modal" data-target="#modalVer" onclick="actualizaDatos('<?php echo $datos ?>')"><?php echo $columna['nombre'] ?></button></li>
+                </div>
+              
               <?php }}?>
-
-
-      
-     
-
-       
-
+      <hr>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 

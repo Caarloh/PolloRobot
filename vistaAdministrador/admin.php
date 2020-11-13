@@ -21,12 +21,19 @@
         </div>
 
 
+                        <div class="card-bodyAdmin">
+                            <img class="img-card" src="https://static.wixstatic.com/media/a2eeb0_d88071155db24fcaa7f8025f3e0433d0~mv2.jpg/v1/fill/w_580,h_365,al_c,q_90/a2eeb0_d88071155db24fcaa7f8025f3e0433d0~mv2.jpg">
+                        </div>
+                        <button id="btnNuevoTrabajador" type="button" class="btnAdmin btn-successAdmin bg-gradient-primaryAdmin" data-toggle="modal" data-target="#modal1">Ingresar Usuario</button>                   
+        </div>
 
-    </div>
-
-
-<!--CREACION PROYECTO--> 
-
+        <div class="card">
+   
+                <div class="card-bodyAdmin">
+                    <img class="img-card" src="https://www.nyfa.edu/student-resources/wp-content/uploads/2015/04/laptop-3373638_640.jpg">
+                </div>
+            <button id="btnNuevoProyecto" type="button" class="btnAdmin btn-successAdmin bg-gradient-primaryAdmin" data-toggle="modal" data-target="#modal2">Crear Proyecto</button>
+        </div>
 
 
 <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

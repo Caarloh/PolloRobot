@@ -106,10 +106,7 @@
 											$i++;
 										}
 			                    	?>
-              						<hr>
-	                  				<div class="text-center">
-	                    				<a class="small" href="cambiarContraseña.php">Olvido su contraseña?</a>
-              						</div>
+              						
             					</div>
           					</div>
             			</div>

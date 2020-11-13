@@ -20,6 +20,7 @@
             <h3 style="color:#242c75" ;><?php echo $dat['nombre'] ?></h3>
         </div>
     <?php
+    break;
     }
     ?>
 

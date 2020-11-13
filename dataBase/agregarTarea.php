@@ -4,7 +4,7 @@ $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
 
-$id = $_POST['id']
+$id = $_POST['id'];
 $nombre = $_POST['Nom'];
 $descripcion = $_POST['Desc'];
 $prioridad = $_POST['Prio'];
