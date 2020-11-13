@@ -76,6 +76,8 @@
 
                     <div class="modal-footer">
                         <!--Guardar y cancelar-->
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+
                         <button type="submit" id="btnGuardar" class="btn btn-success">Guardar</button>
                     </div>
                 </form>
@@ -170,6 +172,8 @@
                     </div>
                     <div class="modal-footer">
                         <!--Guardar y cancelar-->
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+
                         <button type="submit" id="btnGuardar" class="btn btn-success">Guardar</button>
                     </div>
                 </form>
