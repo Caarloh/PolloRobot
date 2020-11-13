@@ -7,9 +7,9 @@ $implementador = $_POST['implementador'];
 $tester = $_POST['tester'];
 
 $user = 'root';
-$password = 'root';
-$basededatos = 'PolloRobot';
-$host = 'localhost:8889';
+$password = '';
+$basededatos = 'pollorobot';
+$host = 'localhost';
 $resultado = 0;
 
 

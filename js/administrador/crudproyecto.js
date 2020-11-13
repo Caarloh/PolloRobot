@@ -6,7 +6,7 @@ tablaProyecto = $("#tablaProyecto").DataTable({
         "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditarPlanta'>Editar</button><button class='btn btn-danger btnBorrarPlanta'>Borrar</button></div></div>"
     }],
 
-    //Para cambiar el lenguaje a español
+    //Para cambiar el lenguaje a espaï¿½ol
     "language": {
         "lengthMenu": "Mostrar _MENU_ registros",
         "zeroRecords": "No se encontraron resultados",
@@ -16,7 +16,7 @@ tablaProyecto = $("#tablaProyecto").DataTable({
         "sSearch": "Buscar:",
         "oPaginate": {
             "sFirst": "Primero",
-            "sLast": "Último",
+            "sLast": "ï¿½ltimo",
             "sNext": "Siguiente",
             "sPrevious": "Anterior"
         },
@@ -29,14 +29,14 @@ $("#btnNuevoProyecto").click(function () {
     $(".modal-header").css("background-color", "#1d3557");
     $(".modal-header").css("color", "white");
     $(".modal-title").text('Crear nuevo proyecto');
-    $("#modalCRUD").modal("show");
+    $("#modal2").modal("show");
     id = null;
     opcion = 1; //alta
 });
 
 var fila; //capturar la fila para editar o borrar el registro
 
-//botón EDITAR    
+//botï¿½n EDITAR    
 $(document).on("click", ".btnEditarProyecto", function () {
     fila = $(this).closest("tr");
     id = parseInt(fila.find('td:eq(0)').text());
@@ -55,16 +55,16 @@ $(document).on("click", ".btnEditarProyecto", function () {
     $(".modal-header").css("background-color", "#3498DB");
     $(".modal-header").css("color", "white");
     $(".modal-title").text("Editar Trabajador");
-    $("#modalCRUD").modal("show");
+    $("#modal2").modal("show");
 
 });
 
-//botón BORRAR
+//botï¿½n BORRAR
 $(document).on("click", ".btnBorrarProyecto", function () {
     fila = $(this);
     id = parseInt($(this).closest("tr").find('td:eq(0)').text());
     opcion = 3 //borrar
-    var respuesta = confirm("¿Está seguro de eliminar el registro: " + id + "?");
+    var respuesta = confirm("ï¿½Estï¿½ seguro de eliminar el registro: " + id + "?");
     if (respuesta) {
         $.ajax({
             url: "dataBase/crudproyecto.php",
@@ -130,10 +130,10 @@ $("#formProyecto").submit(function (e) {
                 
 
             }, error: function (data) {
-                console.log("No se ha podido obtener la información");
+                console.log("No se ha podido obtener la informaciï¿½n");
             }
         });
-        $("#modalCRUD").modal("hide");
+        $("#modal2").modal("hide");
     }
 });
 

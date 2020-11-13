@@ -2,171 +2,187 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Vista Proyectos</h1>
-   <!--todo esto es codigo estatico, era para ver como se veia :B -->
-    <div class="container-fluid">
+    <h1>Panel de Administración</h1>
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Ejemplo con cards</h1>
-          </div>
+    <div class="grid-container">
+        <div class="card">
 
-          <div class="row">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Proyecto Roboto</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$400000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Annual) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Proyecto F</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tasks Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tareas</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                        <div class="card-bodyAdmin">
+                            <img class="img-card" src="https://static.wixstatic.com/media/a2eeb0_d88071155db24fcaa7f8025f3e0433d0~mv2.jpg/v1/fill/w_580,h_365,al_c,q_90/a2eeb0_d88071155db24fcaa7f8025f3e0433d0~mv2.jpg">
                         </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
+                        <button id="btnNuevoTrabajador" type="button" class="btnAdmin btn-successAdmin bg-gradient-primaryAdmin" data-toggle="modal" data-target="#modal1">Ingresar Usuario</button>                   
+    </div>
+
+    <div class="card">
+   
+                    <div class="card-bodyAdmin">
+                        <img class="img-card" src="https://www.nyfa.edu/student-resources/wp-content/uploads/2015/04/laptop-3373638_640.jpg">
+                    </div>
+                    <button id="btnNuevoProyecto" type="button" class="btnAdmin btn-successAdmin bg-gradient-primaryAdmin" data-toggle="modal" data-target="#modal2">Crear Proyecto</button>
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                   
+    </div>
+
+
+
+
+            
+    </div>
+    
             </div>
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Commits</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-
-            <div class="col-lg-6">
-
-              <!-- Default Card Example -->
-              <div class="card mb-4">
-                <div class="card-header">
-                  Default Card Example
-                </div>
-                <div class="card-body">
-                  This card uses Bootstrap's default styling with no utility classes added. Global styles are the only things modifying the look and feel of this default card example.
-                </div>
-              </div>
-
-              <!-- Basic Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
-                </div>
-                <div class="card-body">
-                  The styling for this basic card example is created by using default Bootstrap utility classes. By using utility classes, the style of the card component can be easily modified with no need for any custom CSS!
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-lg-6">
-
-              <!-- Dropdown Card Example -->
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Dropdown Card Example</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  Dropdown menus can be placed in the card header in order to extend the functionality of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis icon in the card header can be clicked on in order to toggle a dropdown menu.
-                </div>
-              </div>
-
-              <!-- Collapsable Card Example -->
-              <div class="card shadow mb-4">
-                <!-- Card Header - Accordion -->
-                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
-                </a>
-                <!-- Card Content - Collapse -->
-                <div class="collapse show" id="collapseCardExample">
-                  <div class="card-body">
-                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
         </div>
+    </div>
+    
+    <!--Modal para CRUD-->
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--Cabecera del modal-->
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="formTrabajador" >
+                    <div class="modal-body">
+                        <!-- Cuerpo del Modal-->
+                        <div class="row justify-content-center align-items-center minh-100">
+                            <!-- Imagen -->
+                            <div class="col-sm-4">
+                                <img src="../img/polloRegistro.jpg" class="rounded img-fluid " >
+                            </div>
+                            <!-- Inputs-->
+                            <div class="col-sm-12 row justify-content-center align-items-center minh-100">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="nombre" class="col-form-label">Nombre:</label>
+                                        <input type="text" class="form-control" id="nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apellidos" class="col-form-label">Apellidos:</label>
+                                        <input type="text" class="form-control" id="apellidos">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="correo" class="col-form-label">Correo:</label>
+                                        <input type="text" class="form-control" id="correo">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="cargo" class="col-form-label">Cargo:</label><br>
 
+                                            <input type="radio" name="cargo" id="jefeProyecto" value="Jefe de Proyecto" onclick="ocultarTipos()">
+                                            <label for="Jefe de Proyecto">Jefe de Proyecto</label><br>
+                                        
+                                            <input type="radio" name="cargo" id="empleado" value="Empleado" onclick="mostrarTipos()">
+                                            <label for="Empleado">Empleado</label><br>
+                                    </div>
+                                    <div class="form-group" id="tipos">
+                                        <label for="cargo" class="col-form-label">Tipo de Empleado:</label><br>
+
+                                            <input type="radio" name="tipo" id="analista" value="Analista">
+                                            <label for="Analista">Analista </label><br>
+
+                                            <input type="radio" name="tipo" id="diseniador" value="Diseniador">
+                                            <label for="Diseniador">Diseñador </label><br>
+
+                                            <input type="radio" name="tipo" id="programador" value="Programador">
+                                            <label for="Programador">Programador </label><br>
+
+                                            <input type="radio" name="tipo" id="tester" value="Tester">
+                                            <label for="Tester">Tester </label><br>
+                                    </div>
+                                    <div class="form-group" id="prueba" >
+                                        <label for="paginagit" class="col-form-label">Página de Git:</label>
+                                        <input type="text" class="form-control" id="paginagit">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                    </div>
+                    <div class="modal-footer">
+                        <!--Guardar y cancelar-->
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" id="btnGuardar" class="btn btn-success" >Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--Cabecera del modal-->
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="formProyecto" >
+                    <div class="modal-body">
+                        <!-- Cuerpo del Modal-->
+                        <div class="row justify-content-center align-items-center minh-100">
+                            <!-- Imagen -->
+                            <div class="col-sm-4">
+                                <img src="../img/polloicon.png" class="rounded img-fluid " >
+                            </div>
+                            <!-- Inputs-->
+                            <div class="col-sm-12 row justify-content-center align-items-center minh-100">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="nombre" class="col-form-label">Nombre:</label>
+                                        <input type="text" class="form-control" id="nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descripcion" class="col-form-label">Descripcion:</label>
+                                        <input type="text" class="form-control" id="descripcion">
+                                    </div>
+                                    <div class="form-group" method="post" action="#">
+                                        <label for="jefe" class="col-form-label">Jefe de Proyecto:</label>
+                                        <input class="form-control" type="text" name="jefe" id="jefe" placeholder="Buscar...">
+                                    </div>
+                                    <div class="form-group" id="suggestions"></div>
+                                    <div class="form-group">
+                                        <label for="repGit" class="col-form-label">Repositorio Git:</label>
+                                        <input type="text" class="form-control" id="repGit">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                    </div>
+
+                    <div class="modal-footer">
+                        <!--Guardar y cancelar-->
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" id="btnGuardar1" class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+   
    
 
 
 </div>
-<!--FIN del cont principal-->
+<!--FIN del cont principal--> 
+<script>
+    function mostrarTipos(){
+        document.getElementById("tipos").style.display = "block";
+    }
+    function ocultarTipos(){
+        document.getElementById("tipos").style.display = "none";
+    }
 
+    
+</script>
 <?php require_once "../componentesVistaAdministrador/admin_inferior.php"?>

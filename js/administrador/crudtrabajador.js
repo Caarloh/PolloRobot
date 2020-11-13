@@ -29,7 +29,7 @@ $("#btnNuevoTrabajador").click(function(){
     $(".modal-header").css("background-color", "#1d3557");
     $(".modal-header").css("color", "white");
     $(".modal-title").text('Registrar Nuevo Trabajador');           
-    $("#modalCRUD").modal("show");        
+    $("#modal1").modal("show");        
     id=null;
     opcion = 1; //alta
 });    
@@ -145,7 +145,7 @@ $("#formTrabajador").submit(function(e){
             console.log("No se ha podido obtener la información");
             }     
         });
-        $("#modalCRUD").modal("hide");   
+        $("#modal1").modal("hide");   
     }
      
     
