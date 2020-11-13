@@ -53,7 +53,7 @@
       <hr class="sidebar-divider my-0">
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="usuario2.php">
+        <a class="nav-link" href="../vistaUsuario/usuario.php">
           <i class="fas fa-chevron-left"></i>
           <span style="font-size: 1.1em">Volver</span></a>
       </li>

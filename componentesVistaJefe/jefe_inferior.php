@@ -112,7 +112,7 @@
 
     <script type="text/javascript" src="../vendor/datatables/datatables.min.js"></script> 
     <script type="text/javascript">
-        window.idref = "<?php echo $_GET['id']; ?>";
+        window.idref = "<?php echo $_GET['id']; ?>"; 
     </script>
     <script type="text/javascript" src="../js/jefe/jefe.js"></script>
 
